@@ -1,2 +1,4 @@
+.idea/
 .sass-lint.yml
+css/
 gulpfile.js
