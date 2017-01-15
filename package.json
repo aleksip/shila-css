@@ -1,0 +1,25 @@
+{
+  "name": "shila-css",
+  "version": "1.0.0-alpha.1",
+  "description": "An opinionated CSS framework",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/aleksip/shila-css.git"
+  },
+  "author": "Aleksi Peebles",
+  "license": "GPL-2.0",
+  "bugs": {
+    "url": "https://github.com/aleksip/shila-css/issues"
+  },
+  "homepage": "https://github.com/aleksip/shila-css",
+  "dependencies": {
+    "breakpoint-sass": "^2.7.1",
+    "sass-toolkit": "^2.10.2",
+    "singularitygs": "^1.7.1"
+  },
+  "devDependencies": {
+    "gulp": "^3.9.1",
+    "gulp-sass": "^3.1.0",
+    "gulp-sass-lint": "^1.3.2"
+  }
+}

@@ -1,0 +1,12 @@
+/**
+ * @file
+ * partials/tools/_tools.clearfix.scss
+ */
+
+@mixin clearfix {
+  &::after {
+    clear: both;
+    content: '';
+    display: table;
+  }
+}
