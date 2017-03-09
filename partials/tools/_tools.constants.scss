@@ -3,6 +3,7 @@
  * partials/tools/_tools.constants.scss
  */
 
+// Returns the opposition position for the position given.
 @function opposite-position($from) {
   @if ($from == top) {
     @return bottom;
