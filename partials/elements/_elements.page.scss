@@ -1,0 +1,16 @@
+/**
+ * @file
+ * partials/elements/_elements.page.scss
+ */
+
+html {
+  @each $breakpoint-key, $font-size in $shila-base-font-sizes {
+    @include breakpoint(shila-breakpoint($breakpoint-key)) {
+      font-size: shila-base-font-size($breakpoint-key);
+      line-height: $shila-base-line-height;
+    }
+  }
+  font-family: $base-font-family;
+  color: $base-font-color;
+  background-color: $base-background-color;
+}

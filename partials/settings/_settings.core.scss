@@ -1,0 +1,40 @@
+/**
+ * @file
+ * partials/settings/_settings.core.scss
+ */
+
+// Breakpoints.
+$xs-break: max-width 524px !default;
+$s-break: 525px !default;
+$m-break: 801px !default;
+$l-break: 1025px !default;
+$shila-breakpoints: (
+  'xs': $xs-break,
+  's':  $s-break,
+  'm':  $m-break,
+  'l':  $l-break,
+) !default;
+
+// Base font sizes for different breakpoints.
+$shila-base-font-sizes: (
+  'xs': 18px,
+  's':  20px,
+  'm':  20px,
+  'l':  20px,
+) !default;
+
+// Base line height.
+$shila-base-line-height: 1.6 !default;
+
+// Line height based spacing.
+$shila-base-spacing: $shila-base-line-height * 1rem !default;
+
+$shila-tiny-spacing-factor: .25 !default;
+$shila-small-spacing-factor: .5 !default;
+$shila-large-spacing-factor: 2 !default;
+$shila-huge-spacing-factor: 4 !default;
+
+$shila-tiny-spacing: $shila-base-spacing * $shila-tiny-spacing-factor;
+$shila-small-spacing: $shila-base-spacing * $shila-small-spacing-factor;
+$shila-large-spacing: $shila-base-spacing * $shila-large-spacing-factor;
+$shila-huge-spacing: $shila-base-spacing * $shila-huge-spacing-factor;

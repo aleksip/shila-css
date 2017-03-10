@@ -4,22 +4,25 @@
  */
 
 // Colors
-
 $blue: #1565c0 !default;
-$dark-gray: #333 !default;
-$medium-gray: #999 !default;
-$light-gray: #ddd !default;
-
-$white: #fefefe !default;
+$white: hsl(0, 0%, 100%) !default;
+$lightest-gray: hsl(0, 0%, 87.5%) !default;
+$lighter-gray: hsl(0, 0%, 75%) !default;
+$light-gray: hsl(0, 0%, 62.5%) !default;
+$medium-gray: hsl(0, 0%, 50%) !default;
+$dark-gray: hsl(0, 0%, 37.5%) !default;
+$darker-gray: hsl(0, 0%, 25%) !default;
+$darkest-gray: hsl(0, 0%, 12.5%) !default;
+$black: hsl(0, 0%, 0%) !default;
 
 // Font Colors
-$base-font-color: $dark-gray !default;
+$base-font-color: $darkest-gray !default;
 $action-color: $blue !default;
 
-// Border
-$base-border-color: $light-gray !default;
+// Border Color
+$base-border-color: $lightest-gray !default;
 $base-border: 1px solid $base-border-color !default;
 
 // Background Colors
 $base-background-color: $white !default;
-$secondary-background-color: tint($base-border-color, 75%) !default;
+$content-background-color: $white !default;
