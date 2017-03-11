@@ -14,7 +14,7 @@
 @mixin shila-no-bullets {
   list-style: none;
   li {
-    @include no-bullet;
+    @include shila-no-bullet;
   }
 }
 
