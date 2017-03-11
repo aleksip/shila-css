@@ -3,15 +3,30 @@
  * partials/tools/_tools.lists.scss
  */
 
+// Turn off the bullet for an element of a list
+@mixin shila-no-bullet {
+  list-style-image: none;
+  list-style-type: none;
+  margin-left: 0;
+}
+
+// turns off the bullets for an entire list
+@mixin shila-no-bullets {
+  list-style: none;
+  li {
+    @include no-bullet;
+  }
+}
+
 // A list(ol,ul) that is layed out such that the elements are floated left and won't wrap.
 // This is not an inline list.
 //
 // Setting `$padding` to `false` disables the padding between list elements
-@mixin horizontal-list($padding: 4px, $direction: left) {
-  @include reset-box-model;
-  @include clearfix;
+@mixin shila-horizontal-list($padding: 4px, $direction: left) {
+  @include shila-reset-box-model;
+  @include shila-clearfix;
   li {
-    @include no-bullet;
+    @include shila-no-bullet;
     white-space: nowrap;
     float: $direction;
     @if $padding {
@@ -24,26 +39,36 @@
         padding-#{$direction}: 0;
       }
       &:last-child {
-        padding-#{opposite-position($direction)}: 0;
+        padding-#{shila-opposite-position($direction)}: 0;
       }
       &.last {
-        padding-#{opposite-position($direction)}: 0;
+        padding-#{shila-opposite-position($direction)}: 0;
       }
     }
   }
 }
 
-// Turn off the bullet for an element of a list
-@mixin no-bullet {
-  list-style-image: none;
-  list-style-type: none;
-  margin-left: 0;
-}
-
-// turns off the bullets for an entire list
-@mixin no-bullets {
-  list-style: none;
+@mixin shila-horizontal-nav {
+  @include shila-reset-box-model;
+  text-align: center;
   li {
-    @include no-bullet;
+    display: inline-block;
+    padding-left: $shila-small-spacing;
+  }
+  li:first-child {
+    padding-left: 0;
+  }
+  a {
+    color: $shila-medium-gray;
+    text-decoration: none;
+    transition: color $shila-base-duration $shila-base-timing;
+    &:active,
+    &:focus,
+    &:hover {
+      color: $shila-dark-gray;
+    }
+  }
+  .is-active {
+    color: $shila-dark-gray;
   }
 }

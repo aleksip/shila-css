@@ -4,25 +4,25 @@
  */
 
 // Colors
-$blue: #1565c0 !default;
-$white: hsl(0, 0%, 100%) !default;
-$lightest-gray: hsl(0, 0%, 87.5%) !default;
-$lighter-gray: hsl(0, 0%, 75%) !default;
-$light-gray: hsl(0, 0%, 62.5%) !default;
-$medium-gray: hsl(0, 0%, 50%) !default;
-$dark-gray: hsl(0, 0%, 37.5%) !default;
-$darker-gray: hsl(0, 0%, 25%) !default;
-$darkest-gray: hsl(0, 0%, 12.5%) !default;
-$black: hsl(0, 0%, 0%) !default;
+$shila-blue: #1565c0 !default;
+$shila-white: hsl(0, 0%, 100%) !default;
+$shila-lightest-gray: hsl(0, 0%, 87.5%) !default;
+$shila-lighter-gray: hsl(0, 0%, 75%) !default;
+$shila-light-gray: hsl(0, 0%, 62.5%) !default;
+$shila-medium-gray: hsl(0, 0%, 50%) !default;
+$shila-dark-gray: hsl(0, 0%, 37.5%) !default;
+$shila-darker-gray: hsl(0, 0%, 25%) !default;
+$shila-darkest-gray: hsl(0, 0%, 12.5%) !default;
+$shila-black: hsl(0, 0%, 0%) !default;
 
 // Font Colors
-$base-font-color: $darkest-gray !default;
-$action-color: $blue !default;
+$shila-base-font-color: $shila-darkest-gray !default;
+$shila-action-color: $shila-blue !default;
 
 // Border Color
-$base-border-color: $lightest-gray !default;
-$base-border: 1px solid $base-border-color !default;
+$shila-base-border-color: $shila-lightest-gray !default;
+$shila-base-border: 1px solid $shila-base-border-color !default;
 
 // Background Colors
-$base-background-color: $white !default;
-$content-background-color: $white !default;
+$shila-base-background-color: $shila-white !default;
+$shila-content-background-color: $shila-white !default;

@@ -4,56 +4,25 @@
  */
 
 // Reset the box model measurements.
-@mixin reset-box-model {
+@mixin shila-reset-box-model {
   margin: 0;
   padding: 0;
   border: 0;
 }
 
-@function shila-breakpoint($breakpoint-key) {
-  @return map-get($shila-breakpoints, $breakpoint-key);
-}
-
-@function shila-columns($breakpoint-key) {
-  @return map-get($shila-columns, $breakpoint-key);
-}
-
-@mixin outer-container {
-  max-width: $max-width;
+@mixin shila-outer-container {
+  max-width: $shila-max-width;
   margin-left: auto;
   margin-right: auto;
 }
 
-@mixin side-paddings {
-  padding-left: $side-padding;
-  padding-right: $side-padding;
-}
-
-@mixin side-margins {
-  margin-left: $side-margin;
-  margin-right: $side-margin;
-}
-
-@mixin horizontal-nav {
-  @include reset-box-model;
-  text-align: center;
-  li {
-    display: inline-block;
-    padding-left: $small-spacing;
-  }
-  li:first-child {
-    padding-left: 0;
-  }
-  a {
-    color: $medium-gray;
-    text-decoration: none;
-    &:active,
-    &:focus,
-    &:hover {
-      color: $dark-gray;
+@mixin shila-side-margins {
+  margin-left: $shila-base-side-spacing;
+  margin-right: $shila-base-side-spacing;
+  @each $breakpoint-key, $side-spacing in $shila-breakpoint-side-spacings {
+    @include breakpoint(shila-breakpoint($breakpoint-key)) {
+      margin-left: $side-spacing;
+      margin-right: $side-spacing;
     }
-  }
-  .is-active {
-    color: $dark-gray;
   }
 }

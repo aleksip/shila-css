@@ -4,26 +4,32 @@
  */
 
 // Breakpoints.
-$xs-break: max-width 524px !default;
-$s-break: 525px !default;
-$m-break: 801px !default;
-$l-break: 1025px !default;
+$shila-s-break: 525px !default;
+$shila-m-break: 801px !default;
+$shila-l-break: 1025px !default;
 $shila-breakpoints: (
-  'xs': $xs-break,
-  's':  $s-break,
-  'm':  $m-break,
-  'l':  $l-break,
+  's':  $shila-s-break,
+  'm':  $shila-m-break,
+  'l':  $shila-l-break,
 ) !default;
+
+// The xs breakpoint is used to target xs only.
+$shila-xs-break: max-width 524px !default;
+
+// Default base font size.
+$shila-base-font-size: 18px !default;
 
 // Base font sizes for different breakpoints.
-$shila-base-font-sizes: (
-  'xs': 18px,
-  's':  20px,
-  'm':  20px,
-  'l':  20px,
+$shila-s-font-size: 20px !default;
+$shila-m-font-size: 20px !default;
+$shila-l-font-size: 20px !default;
+$shila-breakpoint-font-sizes: (
+  's':  $shila-s-font-size,
+  'm':  $shila-m-font-size,
+  'l':  $shila-l-font-size,
 ) !default;
 
-// Base line height.
+// Base line height. To keep things simple it is the same for all breakpoints.
 $shila-base-line-height: 1.6 !default;
 
 // Line height based spacing.

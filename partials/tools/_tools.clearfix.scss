@@ -3,7 +3,7 @@
  * partials/tools/_tools.clearfix.scss
  */
 
-@mixin clearfix {
+@mixin shila-clearfix {
   &::after {
     clear: both;
     content: '';

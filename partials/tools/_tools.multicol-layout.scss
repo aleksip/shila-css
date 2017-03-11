@@ -3,9 +3,9 @@
  * partials/tools/_tools.multicol-layout.scss
  */
 
-@mixin do-multicol-layout($inner-cols: 1, $selector: &) {
-  @for $i from 1 through $inner-cols {
-    #{$selector}:nth-child(#{$inner-cols}n+#{$i}) {
+@mixin shila-do-multicol-layout($inner-columns: 1, $selector: &) {
+  @for $i from 1 through $inner-columns {
+    #{$selector}:nth-child(#{$inner-columns}n+#{$i}) {
       @if ($i == 1) {
         @include isolation-span(1, $i, both);
       } @else {
@@ -17,43 +17,59 @@
 
 /// Multi-column layout.
 ///
-/// @param {Number} $inner-cols
-///   Number of columns.
-/// @param {Number} $outer-cols
-///   Column span of parent element.
+/// @param {Number} $inner-columns
+///   Number of inner columns.
+/// @param {Number} $outer-columns
+///   Number of columns in parent element.
 /// @param $selector [&]
 ///   Selector to use if not targeting current parent selector.
-/// @param $gutter [$gutter]
-///   Gutter size.
-@mixin multicol-layout(
-  $outer-cols, $inner-cols: 1, $selector: &, $gutter: $gutter
+/// @param $gutter [$shila-gutter]
+///   Gutter size of parent element.
+@mixin shila-multicol-layout(
+  $inner-columns: 1,
+  $outer-columns: $shila-base-columns,
+  $selector: &,
+  $gutter: $shila-gutter
 ) {
-  $scaled-gutter: $gutter / ($outer-cols / $inner-cols);
-  @include layout($inner-cols, $scaled-gutter) {
-    @include do-multicol-layout($inner-cols, $selector);
+  $scaled-gutter: $gutter / ($outer-columns / $inner-columns);
+  @include layout($inner-columns, $scaled-gutter) {
+    @include shila-do-multicol-layout($inner-columns, $selector);
   }
 }
 
 /// Multi-column layout with breakpoints.
 ///
-/// @param {List} $inner-cols [(1 2 3 4)]
-///   Number of columns for each breakpoint.
-/// @param {List} $outer-cols [$cols-list]
-///   Column span of parent element in each breakpoint.
+/// @param {Number} $base-inner-columns
+///   Number of inner columns [1]
+/// @param {Map} $breakpoint-inner-columns [('s': 2, 'm': 3, 'l': 4)]
+///   Number of inner columns for specified breakpoints.
+/// @param {Number} $base-outer-columns [$shila-base-columns]
+///   Number of columns in parent element.
+/// @param {Map} $breakpoint-outer-columns [$shila-breakpoint-columns]
+///   Number of columns in parent element for specified breakpoints.
+///   Must contain all the keys that are in $breakpoint-inner-columns.
 /// @param $selector [&]
 ///   Selector to use if not targeting current parent selector.
-/// @param $gutter [$gutter]
-///   Gutter size.
-@mixin multicol-breakpoint-layout(
-  $inner-cols: (1 2 3 4), $outer-cols: $cols-list, $selector: &, $gutter: $gutter
+/// @param $gutter [$shila-gutter]
+///   Gutter size of parent element.
+@mixin shila-multicol-breakpoint-layout(
+  $base-inner-columns: 1,
+  $breakpoint-inner-columns: ('s': 2, 'm': 3, 'l': 4),
+  $base-outer-columns: $shila-base-columns,
+  $breakpoint-outer-columns: $shila-breakpoint-columns,
+  $selector: &,
+  $gutter: $shila-gutter
 ) {
-  @include multicol-layout(
-    nth($outer-cols, 1), nth($inner-cols, 1), $selector, $gutter
+  @include shila-multicol-layout(
+    $base-inner-columns, $base-outer-columns, $selector, $gutter
   );
-  @for $i from 2 through 4 {
-    @include breakpoint(nth($breaks-list, $i)) {
-      @include multicol-layout(
-        nth($outer-cols, $i), nth($inner-cols, $i), $selector, $gutter
+  @each $breakpoint-key, $inner-columns in $breakpoint-inner-columns {
+    @include breakpoint(shila-breakpoint($breakpoint-key)) {
+      @include shila-multicol-layout(
+        $inner-columns,
+        map-get($breakpoint-outer-columns, $breakpoint-key),
+        $selector,
+        $gutter
       );
     }
   }

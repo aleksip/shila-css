@@ -11,7 +11,7 @@
 ///
 /// @access private
 
-@function _is-color($color) {
+@function _shila-is-color($color) {
   @return (type-of($color) == color) or ($color == "currentColor");
 }
 
@@ -34,12 +34,12 @@
 ///     background-color: #664a20;
 ///   }
 
-@function shade(
+@function shila-shade(
   $color,
   $percent
 ) {
 
-  @if not _is-color($color) {
+  @if not _shila-is-color($color) {
     @error "`#{$color}` is not a valid color for the `$color` argument in " +
            "the `shade` mixin.";
   } @else {
@@ -66,12 +66,12 @@
 ///     background-color: #a8dfc9;
 ///   }
 
-@function tint(
+@function shila-tint(
   $color,
   $percent
 ) {
 
-  @if not _is-color($color) {
+  @if not _shila-is-color($color) {
     @error "`#{$color}` is not a valid color for the `$color` argument in " +
            "the `tint` mixin.";
   } @else {

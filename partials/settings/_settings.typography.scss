@@ -5,29 +5,29 @@
 
 // Typography
 
-$font-stack-helvetica: (
+$shila-font-stack-helvetica: (
   "Helvetica Neue",
   "Helvetica",
   "Arial",
   sans-serif,
 ) !default;
-$font-stack-georgia: (
+$shila-font-stack-georgia: (
   "Georgia",
   "Times",
   "Times New Roman",
   serif,
 ) !default;
 
-$base-font-family: $font-stack-helvetica !default;
-$heading-font-family: $base-font-family !default;
+$shila-base-font-family: $shila-font-stack-helvetica !default;
+$shila-heading-font-family: $shila-base-font-family !default;
 
 // Font Sizes
 
-$h1-font-size: 2rem !default;
-$h2-font-size: 1.5rem !default;
-$h3-font-size: 1.17rem !default;
-$h4-font-size: 1rem !default;
-$h5-font-size: .83rem !default;
-$h6-font-size: .67rem !default;
+$shila-h1-font-size: 2rem !default;
+$shila-h2-font-size: 1.5rem !default;
+$shila-h3-font-size: 1.17rem !default;
+$shila-h4-font-size: 1rem !default;
+$shila-h5-font-size: .83rem !default;
+$shila-h6-font-size: .67rem !default;
 
-$heading-line-height: 1.2 !default;
+$shila-heading-line-height: 1.2 !default;

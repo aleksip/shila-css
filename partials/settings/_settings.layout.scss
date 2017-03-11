@@ -4,30 +4,34 @@
  */
 
 // Default grid settings
-$xs-cols: 4 !default;
-$s-cols:  8 !default;
-$m-cols: 12 !default;
-$l-cols: 16 !default;
-$shila-columns: (
-  'xs': $xs-cols,
-  's':  $s-cols,
-  'm':  $m-cols,
-  'l':  $l-cols,
+$shila-base-columns: 4 !default;
+$shila-s-columns:  8 !default;
+$shila-m-columns: 12 !default;
+$shila-l-columns: 16 !default;
+$shila-breakpoint-columns: (
+  's':  $shila-s-columns,
+  'm':  $shila-m-columns,
+  'l':  $shila-l-columns,
 ) !default;
-$gutter: 1 / 3 !default;
-$debug-grid: false !default;
-$background-grid-color: $light-gray !default;
+$shila-gutter: 1 / 3 !default;
+$shila-debug-grid: false !default;
+$shila-background-grid-color: $shila-light-gray !default;
 
-// Set up default grid
-@each $breakpoint-key, $breakpoint in $shila-breakpoints {
-  @include add-grid(map-get($shila-columns, $breakpoint-key) at $breakpoint);
+// Set up default Singularity grid
+@include add-grid($shila-base-columns);
+@each $breakpoint-key, $columns in $shila-breakpoint-columns {
+  @include add-grid($columns at map-get($shila-breakpoints, $breakpoint-key));
 }
-@include add-gutter($gutter);
-@include sgs-change('debug', $debug-grid);
+@include add-gutter($shila-gutter);
+@include sgs-change('debug', $shila-debug-grid);
+
+// Horizontal layout
+$shila-max-width: 1200px !default;
+$shila-base-side-spacing: 5% !default;
+$shila-breakpoint-side-spacings: (
+  's': $shila-base-spacing,
+) !default;
 
 // Other Sizes
-$base-border-radius: 3px !default;
-$base-z-index: 0 !default;
-$side-padding: 1rem !default;
-$side-margin: 1rem !default;
-$max-width: 32rem !default;
+$shila-base-border-radius: 3px !default;
+$shila-base-z-index: 0 !default;

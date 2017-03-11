@@ -4,9 +4,9 @@
  */
 
 // http://hugogiraudel.com/2013/08/08/advanced-sass-list-functions/
-@function first($list) {
+@function shila-first($list) {
   @return nth($list, 1);
 }
-@function last($list) {
+@function shila-last($list) {
   @return nth($list, length($list));
 }

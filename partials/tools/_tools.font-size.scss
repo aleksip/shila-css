@@ -3,21 +3,13 @@
  * partials/tools/_tools.font-size.scss
  */
 
-@function shila-base-font-size($breakpoint-key) {
-  @return map-get($shila-base-font-sizes, $breakpoint-key);
-}
-
-// Converts unitless base-line-height to pixels for pixel-based line-height calculations.
-@function shila-base-line-height($breakpoint-key) {
-  @return round(shila-base-font-size($breakpoint-key) * $shila-base-line-height);
-}
-
-@function shila-line-height($font-size, $breakpoint-key) {
-  @return ceil($font-size / shila-base-line-height($breakpoint-key)) * (shila-base-line-height($breakpoint-key) / $font-size);
+// Calculate a unitless line height for the given font size.
+@function shila-line-height($font-size, $breakpoint-key: null) {
+  @return ceil($font-size / shila-pixel-line-height($breakpoint-key)) * (shila-pixel-line-height($breakpoint-key) / $font-size);
 }
 
 // Generate a font-size and baseline-compatible line-height.
-@mixin shila-font-size($font-size, $breakpoint-key, $line-height: auto, $important: false) {
+@mixin shila-font-size($font-size, $breakpoint-key: null, $line-height: auto, $important: false) {
 
   @if (type-of($font-size) == number) {
     @if (unit($font-size) != "px") {

@@ -1,0 +1,30 @@
+/**
+ * @file
+ * partials/tools/_tools.core.scss
+ */
+
+@function shila-breakpoint($breakpoint-key) {
+  @return map-get($shila-breakpoints, $breakpoint-key);
+}
+
+@function shila-base-font-size($breakpoint-key: null) {
+  @if $breakpoint-key {
+    @return map-get($shila-breakpoint-font-sizes, $breakpoint-key);
+  }
+  @return $shila-base-font-size;
+}
+
+// Calculate a pixel-based line-height.
+@function shila-pixel-line-height($breakpoint-key: null) {
+  @if breakpoint-key {
+    @return round(shila-base-font-size($breakpoint-key) * $shila-base-line-height);
+  }
+  @return round($shila-base-font-size * $shila-base-line-height);
+}
+
+@function shila-columns($breakpoint-key: null) {
+  @if $breakpoint-key {
+    @return map-get($shila-breakpoint-columns, $breakpoint-key);
+  }
+  @return $shila-base-columns;
+}

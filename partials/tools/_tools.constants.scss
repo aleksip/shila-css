@@ -4,7 +4,7 @@
  */
 
 // Returns the opposition position for the position given.
-@function opposite-position($from) {
+@function shila-opposite-position($from) {
   @if ($from == top) {
     @return bottom;
   } @else if ($from == bottom) {
