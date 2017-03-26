@@ -48,3 +48,16 @@
   }
 
 }
+
+@mixin shila-breakpoint-font-sizes($base-font-size, $breakpoint-font-sizes: (), $line-height: auto, $important: false) {
+  @include shila-font-size($base-font-size, null, $line-height, $important);
+  $last-font-size: $base-font-size;
+  @each $breakpoint-key, $base-font-size in $shila-breakpoint-font-sizes {
+    @if (map-has-key($breakpoint-font-sizes, $breakpoint-key)) {
+      $last-font-size: map-get($breakpoint-font-sizes, $breakpoint-key);
+    }
+    @include breakpoint(shila-breakpoint($breakpoint-key)) {
+      @include shila-font-size($last-font-size, $breakpoint-key, $line-height, $important);
+    }
+  }
+}
