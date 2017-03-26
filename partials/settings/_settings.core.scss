@@ -17,12 +17,12 @@ $shila-breakpoints: (
 $shila-xs-break: max-width 524px !default;
 
 // Default base font size.
-$shila-base-font-size: 18px !default;
+$shila-base-font-size: 16px !default;
 
 // Base font sizes for different breakpoints.
-$shila-s-font-size: 20px !default;
-$shila-m-font-size: 20px !default;
-$shila-l-font-size: 20px !default;
+$shila-s-font-size: 16px !default;
+$shila-m-font-size: 16px !default;
+$shila-l-font-size: 16px !default;
 $shila-breakpoint-font-sizes: (
   's':  $shila-s-font-size,
   'm':  $shila-m-font-size,
@@ -30,7 +30,7 @@ $shila-breakpoint-font-sizes: (
 ) !default;
 
 // Base line height. To keep things simple it is the same for all breakpoints.
-$shila-base-line-height: 1.6 !default;
+$shila-base-line-height: 1.3 !default;
 
 // Line height based spacing.
 $shila-base-spacing: $shila-base-line-height * 1rem !default;
