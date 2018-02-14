@@ -1,7 +1,13 @@
-/**
- * @file
- * partials/tools/_tools.layout.scss
- */
+// @file
+// partials/tools/_tools.layout.scss
+
+
+@function shila-columns($breakpoint-key: null) {
+  @if $breakpoint-key {
+    @return map-get($shila-breakpoint-columns, $breakpoint-key);
+  }
+  @return $shila-base-columns;
+}
 
 // Reset the box model measurements.
 @mixin shila-reset-box-model {
