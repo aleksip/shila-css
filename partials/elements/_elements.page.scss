@@ -1,16 +1,9 @@
-/**
- * @file
- * partials/elements/_elements.page.scss
- */
+// @file
+// partials/elements/_elements.page.scss
+
 
 html {
-  font-size: ($shila-base-font-size / 16px) * 1em;
-  line-height: $shila-base-line-height;
-  @each $breakpoint-key, $font-size in $shila-breakpoint-font-sizes {
-    @include breakpoint(shila-breakpoint($breakpoint-key)) {
-      font-size: (shila-base-font-size($breakpoint-key) / 16px) * 1em;
-    }
-  }
+  @include shila-responsive-font-sizes($shila-base-font-sizes, $shila-base-line-heights, false);
   font-family: $shila-base-font-family;
   color: $shila-base-font-color;
   background-color: $shila-base-background-color;
