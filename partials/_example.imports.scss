@@ -1,11 +1,10 @@
-/**
- * @file
- * partials/_imports.scss
- *
- * Global imports.
- *
- * Importing this file must not generate any CSS.
- */
+// @file
+// sass/partials/_imports.scss
+//
+// Global imports.
+//
+// Importing this file must not generate any CSS.
+
 
 @import 'node_modules/singularitygs/stylesheets/singularitygs';
 @import 'node_modules/breakpoint-sass/stylesheets/breakpoint';

@@ -1,7 +1,6 @@
-/**
- * @file
- * partials/tools/_tools.multicol-layout.scss
- */
+// @file
+// partials/tools/_tools.multicol-layout.scss
+
 
 @mixin shila-do-multicol-layout($inner-columns: 1, $selector: &) {
   @for $i from 1 through $inner-columns {
