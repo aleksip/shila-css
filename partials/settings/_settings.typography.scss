@@ -1,9 +1,9 @@
-/**
- * @file
- * partials/settings/_settings.typography.scss
- */
+// @file
+// partials/settings/_settings.typography.scss
 
-// Typography
+
+// Font stacks
+//******************************************************************************
 
 $shila-font-stack-helvetica: (
   "Helvetica Neue",
@@ -21,13 +21,36 @@ $shila-font-stack-georgia: (
 $shila-base-font-family: $shila-font-stack-helvetica !default;
 $shila-heading-font-family: $shila-base-font-family !default;
 
-// Font Sizes
 
-$shila-h1-font-size: 2rem !default;
-$shila-h2-font-size: 1.5rem !default;
-$shila-h3-font-size: 1.17rem !default;
-$shila-h4-font-size: 1rem !default;
-$shila-h5-font-size: .83rem !default;
-$shila-h6-font-size: .67rem !default;
+// Headings
+//******************************************************************************
 
-$shila-heading-line-height: 1.2 !default;
+// Responsive font sizes
+$shila-h1-font-sizes: (
+  'default': 2rem,
+) !default;
+$shila-h2-font-sizes: (
+  'default': 1.5rem,
+) !default;
+$shila-h3-font-sizes: (
+  'default': 1.17rem,
+) !default;
+$shila-h4-font-sizes: (
+  'default': 1rem,
+) !default;
+$shila-h5-font-sizes: (
+  'default': .83rem,
+) !default;
+$shila-h6-font-sizes: (
+  'default': .67rem,
+) !default;
+
+// Responsive line heights
+$shila-h1-line-heights: (
+  'default': 1.2,
+) !default;
+$shila-h2-line-heights: () !default;
+$shila-h3-line-heights: () !default;
+$shila-h4-line-heights: () !default;
+$shila-h5-line-heights: () !default;
+$shila-h6-line-heights: () !default;
