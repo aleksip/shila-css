@@ -9,6 +9,15 @@
   @return $shila-base-columns;
 }
 
+@mixin shila-set-up-singularity-grid {
+  @include add-grid($shila-base-columns);
+  @each $breakpoint-key, $columns in $shila-breakpoint-columns {
+    @include add-grid($columns at shila-breakpoint($breakpoint-key));
+  }
+  @include add-gutter($shila-gutter);
+  @include sgs-change('debug', $shila-debug-grid);
+}
+
 // Reset the box model measurements.
 @mixin shila-reset-box-model {
   margin: 0;
@@ -16,8 +25,8 @@
   border: 0;
 }
 
-@mixin shila-outer-container {
-  max-width: $shila-max-width;
+@mixin shila-outer-container($max-width: $shila-max-width) {
+  max-width: $max-width;
   margin-left: auto;
   margin-right: auto;
 }
