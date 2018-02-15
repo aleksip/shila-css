@@ -11,7 +11,7 @@ $shila-m-break: 801px !default;
 $shila-l-break: 1025px !default;
 
 // XS is a max-width value, used to target XS only.
-$shila-xs-break: $shila-s-break - 1 !default;
+$shila-xs-break: max-width $shila-s-break - 1 !default;
 
 $shila-breakpoints: (
   'xs': $shila-xs-break,
