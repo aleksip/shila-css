@@ -1,5 +1,8 @@
 # shila-css
 
-An opinionated CSS framework, heavily influenced by [inuitcss 6.0.0](https://github.com/inuitcss/inuitcss).
+A Sass-based CSS framework, heavily influenced by [inuitcss](https://github.com/inuitcss/inuitcss).
 
-Used in [Shila theme](https://github.com/aleksip/shila-drupal-theme) for Drupal 8.
+Used in: 
+
+- [Shila theme for Drupal 8](https://github.com/aleksip/shila-drupal-theme)
+- [Pattern Lab Project](https://github.com/aleksip/pattern-lab-project)
