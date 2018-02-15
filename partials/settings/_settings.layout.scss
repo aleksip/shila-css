@@ -16,21 +16,9 @@ $shila-gutter: 1 / 3 !default;
 $shila-debug-grid: false !default;
 $shila-background-grid-color: $shila-light-gray !default;
 
-// Set up default Singularity grid
-@include add-grid($shila-base-columns);
-@each $breakpoint-key, $columns in $shila-breakpoint-columns {
-  @include add-grid($columns at map-get($shila-breakpoints, $breakpoint-key));
-}
-@include add-gutter($shila-gutter);
-@include sgs-change('debug', $shila-debug-grid);
-
-// Horizontal layout
+// Maximum page width and side spacing
 $shila-max-width: 1200px !default;
 $shila-base-side-spacing: 5% !default;
 $shila-breakpoint-side-spacings: (
   's': $shila-base-spacing,
 ) !default;
-
-// Other Sizes
-$shila-base-border-radius: 3px !default;
-$shila-base-z-index: 0 !default;
