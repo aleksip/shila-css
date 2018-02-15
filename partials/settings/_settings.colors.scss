@@ -2,7 +2,7 @@
 // partials/settings/_settings.colors.scss
 
 
-// Colors
+// Named colors
 $shila-blue: #1565c0 !default;
 $shila-white: hsl(0, 0%, 100%) !default;
 $shila-lightest-gray: hsl(0, 0%, 87.5%) !default;
@@ -14,14 +14,12 @@ $shila-darker-gray: hsl(0, 0%, 25%) !default;
 $shila-darkest-gray: hsl(0, 0%, 12.5%) !default;
 $shila-black: hsl(0, 0%, 0%) !default;
 
-// Font Colors
-$shila-base-font-color: $shila-darkest-gray !default;
-$shila-action-color: $shila-blue !default;
-
-// Border Color
-$shila-base-border-color: $shila-lightest-gray !default;
-$shila-base-border: 1px solid $shila-base-border-color !default;
-
-// Background Colors
+// Background colors
 $shila-base-background-color: $shila-white !default;
 $shila-content-background-color: $shila-base-background-color !default;
+
+// Font colors
+$shila-base-font-color: $shila-darkest-gray !default;
+
+// Other colors
+$shila-action-color: $shila-blue !default;
