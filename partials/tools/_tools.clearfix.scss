@@ -4,8 +4,8 @@
 
 @mixin shila-clearfix {
   &::after {
-    clear: both;
-    content: '';
-    display: table;
+    content: '' !important;
+    display: block !important;
+    clear: both !important;
   }
 }
