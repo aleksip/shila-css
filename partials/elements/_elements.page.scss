@@ -4,6 +4,7 @@
 
 html {
   @include shila-responsive-font-sizes($shila-base-font-sizes, $shila-base-line-heights, false);
+  min-height: 100%;
   font-family: $shila-base-font-family;
   color: $shila-base-font-color;
   background-color: $shila-base-background-color;
