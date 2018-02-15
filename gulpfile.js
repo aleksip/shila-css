@@ -14,20 +14,20 @@ var sassLint = require('gulp-sass-lint');
  * Compiles Sass files.
  */
 gulp.task('sass', function () {
-    return gulp.src('./*.scss')
-        .pipe(sass().on('error', sass.logError))
-        .pipe(gulp.dest('./css'))
-    ;
+  return gulp.src('./*.scss')
+    .pipe(sass().on('error', sass.logError))
+    .pipe(gulp.dest('./css'))
+  ;
 });
 
 /**
  * Lints Sass files.
  */
 gulp.task('lint', function () {
-    return gulp.src('./*.scss')
-        .pipe(sassLint())
-        .pipe(sassLint.format())
-    ;
+  return gulp.src('./*.scss')
+    .pipe(sassLint())
+    .pipe(sassLint.format())
+  ;
 });
 
 /**
