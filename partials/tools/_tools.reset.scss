@@ -1,0 +1,10 @@
+// @file
+// partials/tools/_tools.reset.scss
+
+
+// Reset the box model measurements.
+@mixin shila-reset-box-model {
+  margin: 0;
+  padding: 0;
+  border: 0;
+}

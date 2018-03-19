@@ -18,13 +18,6 @@
   @include sgs-change('debug', $shila-debug-grid);
 }
 
-// Reset the box model measurements.
-@mixin shila-reset-box-model {
-  margin: 0;
-  padding: 0;
-  border: 0;
-}
-
 @mixin shila-outer-container($max-width: $shila-max-width) {
   max-width: $max-width;
   margin-left: auto;
