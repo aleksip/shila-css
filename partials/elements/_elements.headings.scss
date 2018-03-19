@@ -2,14 +2,6 @@
 // partials/elements/_elements.headings.scss
 
 
-h1,
-h2,
-h3,
-h4,
-h5,
-h6 {
-  font-family: $shila-heading-font-family;
-}
 h1 {
   @include shila-responsive-font-sizes($shila-h1-font-sizes, $shila-h1-line-heights);
 }
