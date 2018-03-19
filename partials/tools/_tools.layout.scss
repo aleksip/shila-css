@@ -9,7 +9,7 @@
   @return $shila-base-columns;
 }
 
-@mixin shila-set-up-singularity-grid {
+@mixin shila-add-singularity-grid {
   @include add-grid($shila-base-columns);
   @each $breakpoint-key, $columns in $shila-breakpoint-columns {
     @include add-grid($columns at shila-breakpoint($breakpoint-key));
