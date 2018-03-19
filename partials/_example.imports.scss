@@ -8,13 +8,13 @@
 
 @import 'node_modules/singularitygs/stylesheets/singularitygs';
 @import 'node_modules/breakpoint-sass/stylesheets/breakpoint';
+@import 'partials/tools/tools.core';
 @import 'partials/settings/settings.core';
 @import 'partials/settings/settings.animations';
 @import 'partials/settings/settings.colors';
 @import 'partials/settings/settings.forms';
 @import 'partials/settings/settings.typography';
 @import 'partials/settings/settings.layout';
-@import 'partials/tools/tools.core';
 @import 'partials/tools/tools.clearfix';
 @import 'partials/tools/tools.constants';
 @import 'partials/tools/tools.font-size';

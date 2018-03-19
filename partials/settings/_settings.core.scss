@@ -29,36 +29,6 @@ $shila-base-font-sizes: (
 ) !default;
 
 
-// Functions required for setting core variables
-//******************************************************************************
-
-@function shila-px-to-rem($px, $breakpoint: 'default') {
-  @if map-has-key($shila-base-font-sizes, $breakpoint) {
-    @return ($px / map-get($shila-base-font-sizes, $breakpoint)) * 1rem;
-  }
-  @else {
-    @return ($px / map-get($shila-base-font-sizes, 'default')) * 1rem;
-  }
-}
-
-// Returns a unitless line height based on the provided values
-@function shila-line-height($px, $breakpoint: 'default', $map: $shila-base-font-sizes) {
-  $line-height: map-get($map, 'default');
-  @if map-has_key($map, $breakpoint) {
-    $line-height: map-get($map, $breakpoint);
-  }
-  @if (unit($line-height) == 'px') {
-    @return $px / $line-height;
-  }
-  @else if (unit($line-height) == 'rem') {
-    @return shila-px-to-rem($px, $breakpoint) / $line-height;
-  }
-  @else {
-    @error 'Map values need to be in px or rem';
-  }
-}
-
-
 // Base line heights for different breakpoints
 //******************************************************************************
 
