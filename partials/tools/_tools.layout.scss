@@ -2,22 +2,6 @@
 // partials/tools/_tools.layout.scss
 
 
-@function shila-columns($breakpoint-key: null) {
-  @if $breakpoint-key {
-    @return map-get($shila-breakpoint-columns, $breakpoint-key);
-  }
-  @return $shila-base-columns;
-}
-
-@mixin shila-add-singularity-grid {
-  @include add-grid($shila-base-columns);
-  @each $breakpoint-key, $columns in $shila-breakpoint-columns {
-    @include add-grid($columns at shila-breakpoint($breakpoint-key));
-  }
-  @include add-gutter($shila-gutter);
-  @include sgs-change('debug', $shila-debug-grid);
-}
-
 @mixin shila-outer-container($max-width: $shila-max-page-width) {
   max-width: $max-width;
   margin-left: auto;

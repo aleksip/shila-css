@@ -6,7 +6,6 @@
 // Importing this file must not generate any CSS.
 
 
-@import 'node_modules/singularitygs/stylesheets/singularitygs';
 @import 'node_modules/breakpoint-sass/stylesheets/breakpoint';
 @import 'partials/tools/tools.core';
 @import 'partials/settings/settings.core';
@@ -21,5 +20,4 @@
 @import 'partials/tools/tools.hidden';
 @import 'partials/tools/tools.layout';
 @import 'partials/tools/tools.lists';
-@import 'partials/tools/tools.multicol-layout';
 @import 'partials/tools/tools.reset';

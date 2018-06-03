@@ -13,9 +13,7 @@
   },
   "homepage": "https://github.com/aleksip/shila-css",
   "dependencies": {
-    "breakpoint-sass": "^2.7.1",
-    "sass-toolkit": "^2.10.2",
-    "singularitygs": "^1.7.1"
+    "breakpoint-sass": "^2.7.1"
   },
   "devDependencies": {
     "gulp": "^3.9.1",
