@@ -1,8 +1,10 @@
 // @file
-// partials/settings/_settings.forms.scss
+// partials/settings/_settings.selectors.scss
 
 
 // Text inputs
+//******************************************************************************
+
 $shila-all-text-inputs: (
   "input[type='color']",
   "input[type='date']",
@@ -22,7 +24,10 @@ $shila-all-text-inputs: (
   "textarea",
 ) !default;
 
+
 // Buttons
+//******************************************************************************
+
 $shila-all-buttons: (
   "button",
   "input[type='button']",
