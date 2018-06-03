@@ -1,0 +1,18 @@
+// @file
+// partials/styles/_styles.lists.scss
+
+
+ul,
+ol {
+  margin: 0 0 1rem;
+}
+dl {
+  margin-bottom: $shila-small-spacing;
+  dt {
+    font-weight: 600;
+    margin-top: $shila-small-spacing;
+  }
+  dd {
+    margin: 0;
+  }
+}
