@@ -18,3 +18,32 @@
     }
   }
 }
+
+@mixin shila-multicol-layout($columns: null, $spacing: null) {
+  @if $columns {
+    display: grid;
+    grid-template-columns: repeat(#{$columns}, 1fr);
+  }
+  @if $spacing {
+    grid-column-gap: $spacing;
+    grid-row-gap: $spacing;
+  }
+}
+
+@mixin shila-multicol-breakpoint-layout(
+  $columns: ('default': 1, 's': 2, 'm': 3, 'l': 4),
+  $spacings: ('default': $shila-base-spacing)
+) {
+  @each $breakpoint in join('default', map-keys($shila-breakpoints)) {
+    @if map-has-key($columns, $breakpoint) or map-has-key($spacings, $breakpoint) {
+      @if $breakpoint == 'default' {
+        @include shila-multicol-layout(map-get($columns, $breakpoint), map-get($spacings, $breakpoint));
+      }
+      @else {
+        @include breakpoint(shila-breakpoint($breakpoint)) {
+          @include shila-multicol-layout(map-get($columns, $breakpoint), map-get($spacings, $breakpoint));
+        }
+      }
+    }
+  }
+}
