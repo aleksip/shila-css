@@ -69,7 +69,6 @@
   $color,
   $percent
 ) {
-
   @if not _shila-is-color($color) {
     @error "`#{$color}` is not a valid color for the `$color` argument in " +
            "the `shade` mixin.";
@@ -101,7 +100,6 @@
   $color,
   $percent
 ) {
-
   @if not _shila-is-color($color) {
     @error "`#{$color}` is not a valid color for the `$color` argument in " +
            "the `tint` mixin.";
