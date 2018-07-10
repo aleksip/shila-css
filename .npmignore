@@ -2,3 +2,4 @@
 .sass-lint.yml
 css/
 gulpfile.js
+sources/
