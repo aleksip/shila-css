@@ -3,20 +3,20 @@
 
 
 h1 {
-  @include shila-responsive-font-sizes($shila-h1-font-sizes, $shila-h1-line-heights);
+  @include shila-h1-font-size;
 }
 h2 {
-  @include shila-responsive-font-sizes($shila-h2-font-sizes, $shila-h2-line-heights);
+  @include shila-h2-font-size;
 }
 h3 {
-  @include shila-responsive-font-sizes($shila-h3-font-sizes, $shila-h3-line-heights);
+  @include shila-h3-font-size;
 }
 h4 {
-  @include shila-responsive-font-sizes($shila-h4-font-sizes, $shila-h4-line-heights);
+  @include shila-h4-font-size;
 }
 h5 {
-  @include shila-responsive-font-sizes($shila-h5-font-sizes, $shila-h5-line-heights);
+  @include shila-h5-font-size;
 }
 h6 {
-  @include shila-responsive-font-sizes($shila-h6-font-sizes, $shila-h6-line-heights);
+  @include shila-h6-font-size;
 }

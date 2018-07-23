@@ -41,3 +41,27 @@
     }
   }
 }
+
+@mixin shila-h1-font-size {
+  @include shila-responsive-font-sizes($shila-h1-font-sizes, $shila-h1-line-heights);
+}
+
+@mixin shila-h2-font-size {
+  @include shila-responsive-font-sizes($shila-h2-font-sizes, $shila-h2-line-heights);
+}
+
+@mixin shila-h3-font-size {
+  @include shila-responsive-font-sizes($shila-h3-font-sizes, $shila-h3-line-heights);
+}
+
+@mixin shila-h4-font-size {
+  @include shila-responsive-font-sizes($shila-h4-font-sizes, $shila-h4-line-heights);
+}
+
+@mixin shila-h5-font-size {
+  @include shila-responsive-font-sizes($shila-h5-font-sizes, $shila-h5-line-heights);
+}
+
+@mixin shila-h6-font-size {
+  @include shila-responsive-font-sizes($shila-h6-font-sizes, $shila-h6-line-heights);
+}
