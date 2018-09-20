@@ -20,3 +20,13 @@ h5 {
 h6 {
   @include shila-h6-font-size;
 }
+@if $shila-font-weight-bold != 700 {
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    font-weight: $shila-font-weight-bold;
+  }
+}
