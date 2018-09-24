@@ -2,11 +2,11 @@
 // partials/settings/_settings.layout.scss
 
 
-// Maximum page width and side spacing
+// Variables used to set page and content widths
 //******************************************************************************
 
 $shila-max-page-width: 1200px !default;
-$shila-base-side-spacing: 5% !default;
-$shila-breakpoint-side-spacings: (
-  's': $shila-base-spacing,
+$shila-side-spacings: (
+  'default': $shila-base-spacing,
 ) !default;
+$shila-readable-width: 40em !default;

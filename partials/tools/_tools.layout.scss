@@ -2,21 +2,36 @@
 // partials/tools/_tools.layout.scss
 
 
-@mixin shila-outer-container($max-width: $shila-max-page-width) {
-  max-width: $max-width;
-  margin-left: auto;
-  margin-right: auto;
-}
-
-@mixin shila-side-margins {
-  margin-left: $shila-base-side-spacing;
-  margin-right: $shila-base-side-spacing;
-  @each $breakpoint-key, $side-spacing in $shila-breakpoint-side-spacings {
-    @include breakpoint(shila-breakpoint($breakpoint-key)) {
-      margin-left: $side-spacing;
-      margin-right: $side-spacing;
+@function shila-side-spacing($breakpoint: null) {
+  @if $breakpoint {
+    @if map-has_key($shila-side-spacings, $breakpoint) {
+      @return map-get($shila-side-spacings, $breakpoint);
     }
   }
+  @return map-get($shila-side-spacings, 'default');
+}
+
+@mixin shila-side-margins($margin) {
+  margin-left: $margin;
+  margin-right: $margin;
+}
+
+@mixin shila-responsive-side-margins {
+  @each $breakpoint, $side-spacing in $shila-side-spacings {
+    @if $breakpoint == 'default' {
+      @include shila-side-margins(shila-side-spacing($breakpoint));
+    }
+    @else {
+      @include breakpoint(shila-breakpoint($breakpoint)) {
+        @include shila-side-margins(shila-side-spacing($breakpoint));
+      }
+    }
+  }
+}
+
+@mixin shila-outer-container($max-width: $shila-max-page-width) {
+  max-width: $max-width;
+  @include shila-side-margins(auto);
 }
 
 @mixin shila-multicol-layout($columns: null, $spacing: null) {
