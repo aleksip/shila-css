@@ -34,29 +34,43 @@
   @include shila-side-margins(auto);
 }
 
-@mixin shila-multicol-layout($columns: null, $spacing: null) {
+@mixin shila-multicol-layout($columns: null, $column-gap: null, $row-gap: null) {
   @if $columns {
     display: grid;
     grid-template-columns: repeat(#{$columns}, 1fr);
   }
-  @if $spacing {
-    grid-column-gap: $spacing;
-    grid-row-gap: $spacing;
+  @if $column-gap {
+    grid-column-gap: $column-gap;
+  }
+  @if $row-gap {
+    grid-row-gap: $row-gap;
   }
 }
 
 @mixin shila-multicol-breakpoint-layout(
   $columns: ('default': 1, 's': 2, 'm': 3, 'l': 4),
-  $spacings: ('default': $shila-base-spacing)
+  $column-gaps: ('s': $shila-base-spacing),
+  $row-gaps: ()
 ) {
   @each $breakpoint in join('default', map-keys($shila-breakpoints)) {
-    @if map-has-key($columns, $breakpoint) or map-has-key($spacings, $breakpoint) {
+    @if map-has-key($columns, $breakpoint)
+      or map-has-key($column-gaps, $breakpoint)
+      or map-has-key($row-gaps, $breakpoint)
+    {
       @if $breakpoint == 'default' {
-        @include shila-multicol-layout(map-get($columns, $breakpoint), map-get($spacings, $breakpoint));
+        @include shila-multicol-layout(
+          map-get($columns, $breakpoint),
+          map-get($column-gaps, $breakpoint),
+          map-get($row-gaps, $breakpoint)
+        );
       }
       @else {
         @include breakpoint(shila-breakpoint($breakpoint)) {
-          @include shila-multicol-layout(map-get($columns, $breakpoint), map-get($spacings, $breakpoint));
+          @include shila-multicol-layout(
+            map-get($columns, $breakpoint),
+            map-get($column-gaps, $breakpoint),
+            map-get($row-gaps, $breakpoint)
+          );
         }
       }
     }
