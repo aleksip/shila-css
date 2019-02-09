@@ -11,7 +11,7 @@
   @return map-get($shila-side-spacings, 'default');
 }
 
-@mixin shila-side-margins($margin) {
+@mixin shila-side-margins($margin: $shila-base-spacing) {
   margin-left: $margin;
   margin-right: $margin;
 }
