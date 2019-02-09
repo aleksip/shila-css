@@ -36,14 +36,16 @@ $shila-darkest-base-color: shila-shade($shila-base-color, 75%);
 // Background colors
 //******************************************************************************
 
-$shila-base-background-color: $shila-white !default;
-$shila-content-background-color: $shila-base-background-color !default;
+$shila-background-color: $shila-white !default;
+$shila-page-background-color: $shila-background-color !default;
+$shila-content-background-color: $shila-background-color !default;
 
 
-// Font colors
+// Text colors
 //******************************************************************************
 
-$shila-base-font-color: $shila-darkest-gray !default;
+$shila-heading-color: $shila-black !default;
+$shila-text-color: $shila-darkest-gray !default;
 
 
 // Status indicator colors
