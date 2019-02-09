@@ -20,8 +20,10 @@
   @include shila-no-bullets;
 }
 
-@mixin shila-inline-list($spacing: null) {
-  @include shila-reset-list;
+@mixin shila-inline-list($spacing: $shila-small-spacing, $reset: true) {
+  @if $reset {
+    @include shila-reset-list;
+  }
   li {
     display: inline-block;
   }
@@ -32,7 +34,10 @@
   }
 }
 
-@mixin shila-flexbox-list($spacing: null) {
+@mixin shila-flexbox-list($spacing: $shila-small-spacing, $reset: true) {
+  @if $reset {
+    @include shila-reset-list;
+  }
   display: flex;
   flex-wrap: wrap;
   align-items: flex-start;
@@ -49,8 +54,8 @@
   $color: $shila-medium-gray,
   $active-color: $shila-dark-gray
 ) {
-  @include shila-inline-list($spacing);
-  @include shila-flexbox-list($spacing);
+  @include shila-inline-list(false);
+  @include shila-flexbox-list($spacing, false);
   text-align: center;
   a {
     color: $color;
