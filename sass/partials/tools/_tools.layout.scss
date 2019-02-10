@@ -1,0 +1,153 @@
+// @file
+// sass/partials/tools/_tools.layout.scss
+
+
+// tools.layout
+//
+// Style guide: tools.layout
+
+
+// shila-side-spacing
+//
+// <code>@function shila-side-spacing($breakpoint: null)</code>
+//
+// Returns a breakpoint value from <code>$shila-side-spacings</code>. Returns
+// the <code>default</code> value if the optional breakpoint parameter is not
+// provided or a value for the provided breakpoint is not found.
+//
+// $breakpoint - (Optional.) Breakpoint key.
+//
+// Style guide: tools.layout.shila-side-spacing
+@function shila-side-spacing($breakpoint: null) {
+  @if $breakpoint {
+    @if map-has_key($shila-side-spacings, $breakpoint) {
+      @return map-get($shila-side-spacings, $breakpoint);
+    }
+  }
+  @return map-get($shila-side-spacings, 'default');
+}
+
+
+// shila-side-margins
+//
+// <code>@mixin shila-side-margins($margin: $shila-base-spacing)</code>
+//
+// Sets the left and right margins.
+//
+// $margin - (Optional.) Margin to set.
+//
+// Style guide: tools.layout.shila-side-margins
+@mixin shila-side-margins($margin: $shila-base-spacing) {
+  margin-left: $margin;
+  margin-right: $margin;
+}
+
+
+// shila-responsive-side-margins
+//
+// <code>@mixin shila-responsive-side-margins</code>
+//
+// Sets responsive side margins using the values in
+// <code>$shila-side-spacings</code>.
+//
+// Style guide: tools.layout.shila-responsive-side-margins
+@mixin shila-responsive-side-margins {
+  @each $breakpoint, $side-spacing in $shila-side-spacings {
+    @if $breakpoint == 'default' {
+      @include shila-side-margins(shila-side-spacing($breakpoint));
+    }
+    @else {
+      @include breakpoint(shila-breakpoint($breakpoint)) {
+        @include shila-side-margins(shila-side-spacing($breakpoint));
+      }
+    }
+  }
+}
+
+
+// shila-outer-container
+//
+// <code>@mixin shila-outer-container($max-width: $shila-max-page-width)</code>
+//
+// Sets a maximum width with <code>auto</code> side margins.
+//
+// $max-width - (Optional.) Maximum width.
+//
+// Style guide: tools.layout.shila-outer-container
+@mixin shila-outer-container($max-width: $shila-max-page-width) {
+  max-width: $max-width;
+  @include shila-side-margins(auto);
+}
+
+
+// shila-multicol-layout
+//
+// <code>@mixin shila-multicol-layout($columns: null, $column-gap: null, $row-gap: null)</code>
+//
+// Defines a CSS grid based multi-column layout. All parameters are optional so
+// this mixin can be used to responsively change only the row and/or column
+// gap(s) of an existing grid.
+//
+// $columns    - (Optional.) Number of columns.
+// $column-gap - (Optional.) Column gap.
+// $row-gap    - (Optional.) Row gap.
+//
+// Style guide: tools.layout.shila-multicol-layout
+@mixin shila-multicol-layout($columns: null, $column-gap: null, $row-gap: null) {
+  @if $columns {
+    display: grid;
+    grid-template-columns: repeat(#{$columns}, 1fr);
+  }
+  @if $column-gap {
+    grid-column-gap: $column-gap;
+  }
+  @if $row-gap {
+    grid-row-gap: $row-gap;
+  }
+}
+
+
+// shila-multicol-breakpoint-layout
+//
+// <pre><code>@mixin shila-multicol-breakpoint-layout(
+//   $columns: ('default': 1, 's': 2, 'm': 3, 'l': 4),
+//   $column-gaps: ('s': $shila-base-spacing),
+//   $row-gaps: ()
+// )</code></pre>
+//
+// Defines CSS grid based multi-column layouts for different breakpoints.
+//
+// $columns     - Sass map with columns keyed by breakpoints.
+// $column-gaps - Sass map with column gaps keyed by breakpoints.
+// $row-gaps    - Sass map with row gaps keyed by breakpoints.
+//
+// Style guide: tools.layout.shila-multicol-layout
+@mixin shila-multicol-breakpoint-layout(
+  $columns: ('default': 1, 's': 2, 'm': 3, 'l': 4),
+  $column-gaps: ('s': $shila-base-spacing),
+  $row-gaps: ()
+) {
+  @each $breakpoint in join('default', map-keys($shila-breakpoints)) {
+    @if map-has-key($columns, $breakpoint)
+      or map-has-key($column-gaps, $breakpoint)
+      or map-has-key($row-gaps, $breakpoint)
+    {
+      @if $breakpoint == 'default' {
+        @include shila-multicol-layout(
+          map-get($columns, $breakpoint),
+          map-get($column-gaps, $breakpoint),
+          map-get($row-gaps, $breakpoint)
+        );
+      }
+      @else {
+        @include breakpoint(shila-breakpoint($breakpoint)) {
+          @include shila-multicol-layout(
+            map-get($columns, $breakpoint),
+            map-get($column-gaps, $breakpoint),
+            map-get($row-gaps, $breakpoint)
+          );
+        }
+      }
+    }
+  }
+}

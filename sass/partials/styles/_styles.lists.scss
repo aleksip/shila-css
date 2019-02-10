@@ -1,0 +1,25 @@
+// @file
+// sass/partials/styles/_styles.lists.scss
+
+
+// styles.lists
+//
+// Styling for lists.
+//
+// Style guide: styles.lists
+
+
+ul,
+ol {
+  margin: 0 0 1rem;
+}
+dl {
+  margin-bottom: $shila-small-spacing;
+  dt {
+    font-weight: 600;
+    margin-top: $shila-small-spacing;
+  }
+  dd {
+    margin: 0;
+  }
+}

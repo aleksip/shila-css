@@ -1,0 +1,195 @@
+// @file
+// sass/partials/settings/_settings.typography.scss
+
+
+// settings.typography
+//
+// Contains variables related to typography. Please note that some essential
+// typography related variables are in <code>settings.core</code>.
+//
+// Weight: 2
+//
+// Style guide: settings.typography
+
+
+// Font stacks
+//
+// Style guide: settings.typography.font-stacks
+
+
+// $shila-font-stack-helvetica
+//
+// A Helvetica (sans-serif) font stack.
+//
+// Style guide: settings.typography.font-stacks.shila-font-stack-helvetica
+$shila-font-stack-helvetica: (
+  "Helvetica Neue",
+  "Helvetica",
+  "Arial",
+  sans-serif,
+) !default;
+
+
+// $shila-font-stack-georgia
+//
+// A Georgia (serif) font stack.
+//
+// Style guide: settings.typography.font-stacks.shila-font-stack-helvetica
+$shila-font-stack-georgia: (
+  "Georgia",
+  "Times",
+  "Times New Roman",
+  serif,
+) !default;
+
+
+// Font families
+//
+// Style guide: settings.typography.font-families
+
+
+// $shila-base-font-family
+//
+// Font family used for the base font. Default value:
+// <code>$shila-font-stack-helvetica</code>.
+//
+// Style guide: settings.typography.font-families.shila-base-font-family
+$shila-base-font-family: $shila-font-stack-helvetica !default;
+
+
+// $shila-heading-font-family
+//
+// Font family used for headings. Default value:
+// <code>$shila-base-font-family</code>.
+//
+// Style guide: settings.typography.font-families.shila-heading-font-family
+$shila-heading-font-family: $shila-base-font-family !default;
+
+
+// Font weights
+//
+// Style guide: settings.typography.font-weights
+
+
+// $shila-font-weight-normal
+//
+// Default value: <code>400</code>.
+//
+// Style guide: settings.typography.font-weights.shila-font-weight-normal
+$shila-font-weight-normal: 400 !default;
+
+
+// $shila-font-weight-bold
+//
+// Default value: <code>700</code>.
+//
+// Style guide: settings.typography.font-weights.shila-font-weight-bold
+$shila-font-weight-bold: 700 !default;
+
+
+// $shila-heading-font-weight
+//
+// Default value: <code>$shila-font-weight-bold</code>.
+//
+// Style guide: settings.typography.font-weights.shila-heading-font-weight
+$shila-heading-font-weight: $shila-font-weight-bold;
+
+
+// Font sizes
+//
+// Sass maps containing font sizes for different breakpoints.
+//
+// Style guide: settings.typography.font-sizes
+
+
+// $shila-h1-font-sizes
+//
+// Style guide: settings.typography.font-sizes.shila-h1-font-sizes
+$shila-h1-font-sizes: (
+  'default': 2rem,
+) !default;
+
+
+// $shila-h2-font-sizes
+//
+// Style guide: settings.typography.font-sizes.shila-h2-font-sizes
+$shila-h2-font-sizes: (
+  'default': 1.5rem,
+) !default;
+
+
+// $shila-h3-font-sizes
+//
+// Style guide: settings.typography.font-sizes.shila-h3-font-sizes
+$shila-h3-font-sizes: (
+  'default': 1.17rem,
+) !default;
+
+
+// $shila-h4-font-sizes
+//
+// Style guide: settings.typography.font-sizes.shila-h4-font-sizes
+$shila-h4-font-sizes: (
+  'default': 1rem,
+) !default;
+
+
+// $shila-h5-font-sizes
+//
+// Style guide: settings.typography.font-sizes.shila-h5-font-sizes
+$shila-h5-font-sizes: (
+  'default': .83rem,
+) !default;
+
+
+// $shila-h6-font-sizes
+//
+// Style guide: settings.typography.font-sizes.shila-h6-font-sizes
+$shila-h6-font-sizes: (
+  'default': .67rem,
+) !default;
+
+
+// Line heights
+//
+// Sass maps containing line heights for different breakpoints.
+//
+// Style guide: settings.typography.line-heights
+
+
+// $shila-h1-line-heights
+//
+// Style guide: settings.typography.line-heights.shila-h1-line-heights
+$shila-h1-line-heights: (
+  'default': 1.2,
+) !default;
+
+
+// $shila-h2-line-heights
+//
+// Style guide: settings.typography.line-heights.shila-h2-line-heights
+$shila-h2-line-heights: () !default;
+
+
+// $shila-h3-line-heights
+//
+// Style guide: settings.typography.line-heights.shila-h3-line-heights
+$shila-h3-line-heights: () !default;
+
+
+// $shila-h4-line-heights
+//
+// Style guide: settings.typography.line-heights.shila-h4-line-heights
+$shila-h4-line-heights: () !default;
+
+
+// $shila-h5-line-heights
+//
+// Style guide: settings.typography.line-heights.shila-h5-line-heights
+$shila-h5-line-heights: () !default;
+
+
+// $shila-h6-line-heights
+//
+// Style guide: settings.typography.line-heights.shila-h6-line-heights
+$shila-h6-line-heights: () !default;

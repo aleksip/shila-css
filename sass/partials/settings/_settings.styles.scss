@@ -1,0 +1,76 @@
+// @file
+// sass/partials/settings/_settings.styles.scss
+
+
+// settings.styles
+//
+// Contains variables used in the more opinionated <code>styles</code> partials.
+//
+// Weight: 5
+//
+// Style guide: settings.styles
+
+
+// Borders
+//
+// Style guide: settings.styles.borders
+
+
+// $shila-base-border
+//
+// Base border style. Default value: <code>1px solid
+// $shila-base-border-color</code>.
+//
+// Style guide: settings.styles.borders.shila-base-border
+$shila-base-border: 1px solid $shila-base-border-color !default;
+
+
+// $shila-base-border-radius
+//
+// Base border radius. Default value: <code>3px</code>.
+//
+// Style guide: settings.styles.borders.shila-base-border-radius
+$shila-base-border-radius: 3px !default;
+
+
+// Forms
+//
+// Style guide: settings.styles.forms
+
+
+// $shila-form-box-shadow
+//
+// Default value: <code>inset 0 1px 3px rgba(#000, 0.06)</code>.
+//
+// Style guide: settings.styles.forms.shila-form-box-shadow
+$shila-form-box-shadow: inset 0 1px 3px rgba(#000, 0.06) !default;
+
+
+// $shila-form-box-shadow-focus
+//
+// Default value: <code>$shila-form-box-shadow, 0 0 5px
+// adjust-color($shila-action-color, $lightness: -5%, $alpha: -0.3)</code>.
+//
+// Style guide: settings.styles.forms.shila-form-box-shadow-focus
+$shila-form-box-shadow-focus: $shila-form-box-shadow, 0 0 5px adjust-color($shila-action-color, $lightness: -5%, $alpha: -0.3) !default;
+
+
+// Animations
+//
+// Style guide: settings.styles.animations
+
+
+// $shila-base-duration
+//
+// Default value: <code>150ms</code>.
+//
+// Style guide: settings.styles.animations.shila-base-duration
+$shila-base-duration: 150ms !default;
+
+
+// $shila-base-timing
+//
+// Default value: <code>ease</code>.
+//
+// Style guide: settings.styles.animations.shila-base-timing
+$shila-base-timing: ease !default;

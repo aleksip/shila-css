@@ -1,8 +1,0 @@
-// @file
-// partials/elements/_elements.page.scss
-
-
-html {
-  @include shila-responsive-font-sizes($shila-base-font-sizes, $shila-base-line-heights, false);
-  min-height: 100%;
-}

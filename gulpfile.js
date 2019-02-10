@@ -14,7 +14,7 @@ var sassLint = require('gulp-sass-lint');
  * Compiles Sass files.
  */
 gulp.task('sass', function () {
-  return gulp.src('./*.scss')
+  return gulp.src('./sass/*.scss')
     .pipe(sass().on('error', sass.logError))
     .pipe(gulp.dest('./css'))
   ;
@@ -24,7 +24,7 @@ gulp.task('sass', function () {
  * Lints Sass files.
  */
 gulp.task('lint', function () {
-  return gulp.src('./*.scss')
+  return gulp.src('./sass/*.scss')
     .pipe(sassLint())
     .pipe(sassLint.format())
   ;
@@ -33,4 +33,4 @@ gulp.task('lint', function () {
 /**
  * Gulp default task.
  */
-gulp.task('default', ['sass']);
+gulp.task('default', gulp.series('sass'));

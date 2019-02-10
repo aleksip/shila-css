@@ -1,0 +1,156 @@
+// @file
+// sass/partials/tools/_tools.font-size.scss
+
+
+// tools.font-size
+//
+// Contains mixins related to font sizes.
+//
+// Style guide: tools.font-size
+
+
+// shila-breakpoint-font-size
+//
+// <code>@mixin shila-breakpoint-font-size($breakpoint, $font-sizes,
+// $line-heights: (), $rem: true)</code>
+//
+// Sets the font size and/or optionally the line height for the provided
+// breakpoint if found in the provided Sass map(s). If the font size is in
+// pixels, it will be converted to <code>rem</code> unless the optional
+// <code>$rem</code> parameter is set to <code>false</code>.
+//
+// $breakpoint   - Breakpoint key to use with the provided Sass map(s).
+// $font-sizes   - Sass map containing font sizes keyed by breakpoints.
+// $line-heights - (Optional.) Sass map containing line heights keyed by breakpoints.
+// $rem          - (Optional.) Boolean indicating whether a <code>px</code> value should be converted to <code>rem</code>.
+//
+// Style guide: tools.font-size.shila-breakpoint-font-size
+@mixin shila-breakpoint-font-size($breakpoint, $font-sizes, $line-heights: (), $rem: true) {
+  @if map-has-key($font-sizes, $breakpoint) {
+    $font-size: map-get($font-sizes, $breakpoint);
+    @if type-of($font-size) != 'number' {
+      $type: type-of($font-size);
+      @error "Font size value '#{$font-size}' shoud be a number but it is a #{$type}";
+    }
+    @if $rem == true and unit($font-size) == 'px' {
+      $font-size: shila-px-to-rem($font-size, $breakpoint);
+    }
+    font-size: $font-size;
+  }
+  @if map-has-key($line-heights, $breakpoint) {
+    line-height: map-get($line-heights, $breakpoint);
+  }
+}
+
+
+// shila-responsive-font-size
+//
+// <code>@mixin shila-responsive-font-size($font-sizes, $line-heights: (), $rem: true)</code>
+//
+// Sets font sizes and/or optionally line heights for all breakpoints found in
+// the provided Sass map(s). If font sizes are in pixels, they will be converted
+// to <code>rem</code> unless the optional <code>$rem</code> parameter is set to
+// <code>false</code>.
+//
+// $font-sizes   - Sass map containing font sizes keyed by breakpoints.
+// $line-heights - (Optional.) Sass map containing line heights keyed by breakpoints.
+// $rem          - (Optional.) Boolean indicating whether a <code>px</code> value should be converted to <code>rem</code>.
+//
+// Style guide: tools.font-size.shila-responsive-font-sizes
+@mixin shila-responsive-font-size($font-sizes, $line-heights: (), $rem: true) {
+  @each $breakpoint in join('default', map-keys($shila-breakpoints)) {
+    @if map-has-key($font-sizes, $breakpoint) or map-has-key($line-heights, $breakpoint) {
+      @if $breakpoint == 'default' {
+        @include shila-breakpoint-font-size($breakpoint, $font-sizes, $line-heights, $rem);
+      }
+      @else {
+        @include breakpoint(shila-breakpoint($breakpoint)) {
+          @include shila-breakpoint-font-size($breakpoint, $font-sizes, $line-heights, $rem);
+        }
+      }
+    }
+  }
+}
+
+
+// Shorthands
+//
+// Style guide: tools.font-size.shorthands
+
+
+// shila-h1-font-size
+//
+// <code>@mixin shila-h1-font-size</code>
+//
+// Shorthand for <code>shila-responsive-font-size($shila-h1-font-sizes,
+// $shila-h1-line-heights)</code>.
+//
+// Style guide: tools.font-size.shorthands.shila-h1-font-size
+@mixin shila-h1-font-size {
+  @include shila-responsive-font-size($shila-h1-font-sizes, $shila-h1-line-heights);
+}
+
+
+// shila-h2-font-size
+//
+// <code>@mixin shila-h2-font-size</code>
+//
+// Shorthand for <code>shila-responsive-font-size($shila-h2-font-sizes,
+// $shila-h2-line-heights)</code>.
+//
+// Style guide: tools.font-size.shorthands.shila-h2-font-size
+@mixin shila-h2-font-size {
+  @include shila-responsive-font-size($shila-h2-font-sizes, $shila-h2-line-heights);
+}
+
+
+// shila-h3-font-size
+//
+// <code>@mixin shila-h3-font-size</code>
+//
+// Shorthand for <code>shila-responsive-font-size($shila-h3-font-sizes,
+// $shila-h3-line-heights)</code>.
+//
+// Style guide: tools.font-size.shorthands.shila-h3-font-size
+@mixin shila-h3-font-size {
+  @include shila-responsive-font-size($shila-h3-font-sizes, $shila-h3-line-heights);
+}
+
+
+// shila-h4-font-size
+//
+// <code>@mixin shila-h4-font-size</code>
+//
+// Shorthand for <code>shila-responsive-font-size($shila-h4-font-sizes,
+// $shila-h4-line-heights)</code>.
+//
+// Style guide: tools.font-size.shorthands.shila-h4-font-size
+@mixin shila-h4-font-size {
+  @include shila-responsive-font-size($shila-h4-font-sizes, $shila-h4-line-heights);
+}
+
+
+// shila-h5-font-size
+//
+// <code>@mixin shila-h5-font-size</code>
+//
+// Shorthand for <code>shila-responsive-font-size($shila-h5-font-sizes,
+// $shila-h5-line-heights)</code>.
+//
+// Style guide: tools.font-size.shorthands.shila-h5-font-size
+@mixin shila-h5-font-size {
+  @include shila-responsive-font-size($shila-h5-font-sizes, $shila-h5-line-heights);
+}
+
+
+// shila-h6-font-size
+//
+// <code>@mixin shila-h6-font-size</code>
+//
+// Shorthand for <code>shila-responsive-font-size($shila-h6-font-sizes,
+// $shila-h6-line-heights)</code>.
+//
+// Style guide: tools.font-size.shorthands.shila-h6-font-size
+@mixin shila-h6-font-size {
+  @include shila-responsive-font-size($shila-h6-font-sizes, $shila-h6-line-heights);
+}

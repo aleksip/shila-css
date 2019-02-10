@@ -1,0 +1,6 @@
+{
+  "title": "shila-css",
+  "source": "./sass/",
+  "destination": "./docs/",
+  "homepage": "../docs.md"
+}

@@ -1,0 +1,23 @@
+// @file
+// sass/partials/tools/_tools.clearfix.scss
+
+
+// tools.clearfix
+//
+// Style guide: tools.clearfix
+
+
+// shila-clearfix
+//
+// <code>@mixin shila-clearfix</code>
+//
+// Traditional clearfix.
+//
+// Style guide: tools.clearfix.shila-clearfix
+@mixin shila-clearfix {
+  &::after {
+    content: '' !important;
+    display: block !important;
+    clear: both !important;
+  }
+}

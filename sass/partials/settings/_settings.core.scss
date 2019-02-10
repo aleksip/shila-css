@@ -1,0 +1,155 @@
+// @file
+// sass/partials/settings/_settings.core.scss
+
+
+// settings.core
+//
+// Contains core framework variables for responsive design, typography and
+// spacing. This should be the second file imported from <code>shila-css</code>.
+// The first file should be <code>tools.core</code>, which contains functions
+// used in this file.
+//
+// Weight: -1
+//
+// Style guide: settings.core
+
+
+// Breakpoints
+//
+// Breakpoint variables for responsive design.
+//
+// Weight: 1
+//
+// Style guide: settings.core.breakpoints
+
+
+// $shila-s-break
+//
+// Breakpoint for small displays. Default value: <code>525px</code>.
+//
+// Style guide: settings.core.breakpoints.shila-s-break
+$shila-s-break: 525px !default;
+
+
+// $shila-m-break
+//
+// Breakpoint for medium displays. Default value: <code>801px</code>.
+//
+// Style guide: settings.core.breakpoints.shila-m-break
+$shila-m-break: 801px !default;
+
+
+// $shila-l-break
+//
+// Breakpoint for large displays. Default value: <code>1025px</code>.
+//
+// Style guide: settings.core.breakpoints.shila-l-break
+$shila-l-break: 1025px !default;
+
+
+// $shila-xs-break
+//
+// Max-width breakpoint for targeting extra small displays only. Default value:
+// <code>max-width $shila-s-break - 1</code>.
+//
+// Style guide: settings.core.breakpoints.shila-xs-break
+$shila-xs-break: max-width $shila-s-break - 1 !default;
+
+
+// $shila-breakpoints
+//
+// Sass map containing all breakpoints.
+//
+// Style guide: settings.core.breakpoints.shila-breakpoints.
+$shila-breakpoints: (
+  'xs': $shila-xs-break,
+  's':  $shila-s-break,
+  'm':  $shila-m-break,
+  'l':  $shila-l-break,
+) !default;
+
+
+// Typography
+//
+// Variables for responsive typography. The base line height is by default also
+// used as a basis for all spacing variables.
+//
+// Weight: 2
+//
+// Style guide: settings.core.typography
+
+
+// $shila-base-font-sizes
+//
+// Sass map containing base font sizes for different breakpoints. Default value:
+// <code>16px</code> for all breakpoints.
+//
+// Style guide: settings.core.typography.shila-base-font-sizes
+$shila-base-font-sizes: (
+  'default': 16px,
+) !default;
+
+
+// $shila-base-line-heights
+//
+// Sass map containing base line heights for different breakpoints. Default
+// value: <code>21px</code> for all breakpoints.
+//
+// Style guide: settings.core.typography.shila-base-line-heights
+$shila-base-line-heights: (
+  'default': shila-line-height(21px)
+) !default;
+
+
+// Spacing
+//
+// Weight: 3
+//
+// Style guide: settings.core.spacing
+
+
+// $shila-base-spacing
+//
+// Base spacing unit. Used as the basis for other core spacing variables.
+// Default value: <code>default</code> in <code>$shila-base-line-heights</code>.
+//
+// Style guide: settings.core.spacing.shila-base-spacing
+$shila-base-spacing: map-get($shila-base-line-heights, 'default') * 1rem !default;
+
+
+$shila-tiny-spacing-factor: .25 !default;
+$shila-small-spacing-factor: .5 !default;
+$shila-large-spacing-factor: 2 !default;
+$shila-huge-spacing-factor: 4 !default;
+
+
+// $shila-tiny-spacing
+//
+// Tiny spacing unit.
+//
+// Style guide: settings.core.spacing.shila-tiny-spacing
+$shila-tiny-spacing: $shila-base-spacing * $shila-tiny-spacing-factor;
+
+
+// $shila-small-spacing
+//
+// Small spacing unit.
+//
+// Style guide: settings.core.spacing.shila-small-spacing
+$shila-small-spacing: $shila-base-spacing * $shila-small-spacing-factor;
+
+
+// $shila-large-spacing
+//
+// Large spacing unit.
+//
+// Style guide: settings.core.spacing.shila-large-spacing
+$shila-large-spacing: $shila-base-spacing * $shila-large-spacing-factor;
+
+
+// $shila-huge-spacing
+//
+// Huge spacing unit.
+//
+// Style guide: settings.core.spacing.shila-huge-spacing
+$shila-huge-spacing: $shila-base-spacing * $shila-huge-spacing-factor;

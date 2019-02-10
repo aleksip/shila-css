@@ -1,0 +1,124 @@
+// @file
+// sass/partials/tools/_tools.core.scss
+
+
+// tools.core
+//
+// Contains core framework Sass functions that can be used in
+// <code>settings</code>. This should be the first file imported from
+// <code>shila-css</code>.
+//
+// Weight: -1
+//
+// Style guide: tools.core
+
+
+// shila-px-to-rem
+//
+// <code>@function shila-px-to-rem($px, $breakpoint: 'default')</code>
+//
+// Returns the <code>rem</code> equivalent of the size provided in pixels, in
+// the optionally provided breakpoint.
+//
+// $px         - Size in pixels.
+// $breakpoint - Optional. Breakpoint key in <code>$shila-base-font-sizes</code>.
+//
+// Style guide: tools.core.shila-px-to-rem
+@function shila-px-to-rem($px, $breakpoint: 'default') {
+  @if map-has-key($shila-base-font-sizes, $breakpoint) {
+    @return ($px / map-get($shila-base-font-sizes, $breakpoint)) * 1rem;
+  }
+  @else {
+    @return ($px / map-get($shila-base-font-sizes, 'default')) * 1rem;
+  }
+}
+
+
+// shila-line-height
+//
+// <code>@function shila-line-height($px, $breakpoint: 'default', $map:
+// $shila-base-font-sizes)</code>
+//
+// Returns a unitless line height based on the size provided in pixels and other
+// possible provided parameters.
+//
+// $px         - Size in pixels.
+// $breakpoint - (Optional.) Breakpoint key in the provided or default <code>$map</code>.
+// $map        - (Optional.) Sass map containing font sizes keyed by breakpoints.
+//
+// Style guide: tools.core.shila-line-height
+@function shila-line-height($px, $breakpoint: 'default', $map: $shila-base-font-sizes) {
+  $line-height: map-get($map, 'default');
+  @if map-has_key($map, $breakpoint) {
+    $line-height: map-get($map, $breakpoint);
+  }
+  @if (unit($line-height) == 'px') {
+    @return $px / $line-height;
+  }
+  @else if (unit($line-height) == 'rem') {
+    @return shila-px-to-rem($px, $breakpoint) / $line-height;
+  }
+  @else {
+    @error 'Map values need to be in px or rem';
+  }
+}
+
+
+// shila-breakpoint
+//
+// <code>@function shila-breakpoint($breakpoint)</code>
+//
+// Shorthand for <code>map-get($shila-breakpoints, $breakpoint)</code>.
+//
+// $breakpoint - Breakpoint key.
+//
+// Style guide: tools.core.shila-breakpoint
+@function shila-breakpoint($breakpoint) {
+  @return map-get($shila-breakpoints, $breakpoint);
+}
+
+
+// Private function that checks for a valid CSS color.
+@function _shila-is-color($color) {
+  @return (type-of($color) == color) or ($color == "currentColor");
+}
+
+
+// shila-shade
+//
+// <code>@function shila-shade($color, $percent)</code>
+//
+// Mixes a color with black.
+//
+// $color   - Color.
+// $percent - The amount of black to be mixed in.
+//
+// Style guide: tools.core.shila-shade
+@function shila-shade($color, $percent) {
+  @if not _shila-is-color($color) {
+    @error "`#{$color}` is not a valid color for the `$color` argument in " +
+           "the `shila-shade` mixin.";
+  } @else {
+    @return mix(#000, $color, $percent);
+  }
+}
+
+
+// shila-tint
+//
+// <code>@function shila-tint($color, $percent)</code>
+//
+// Mixes a color with white.
+//
+// $color   - Color.
+// $percent - The amount of white to be mixed in.
+//
+// Style guide: tools.core.shila-tint
+@function shila-tint($color, $percent) {
+  @if not _shila-is-color($color) {
+    @error "`#{$color}` is not a valid color for the `$color` argument in " +
+           "the `shila-tint` mixin.";
+  } @else {
+    @return mix(#fff, $color, $percent);
+  }
+}

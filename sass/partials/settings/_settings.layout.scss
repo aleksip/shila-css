@@ -1,0 +1,52 @@
+// @file
+// sass/partials/settings/_settings.layout.scss
+
+
+// settings.layout
+//
+// Contains variables used in <code>tools.layout</code> and other useful
+// variables for common use cases.
+//
+// Weight: 3
+//
+// Style guide: settings.layout
+
+
+// Maximum widths
+//
+// Style guide: settings.layout.max-widths
+
+
+// $shila-max-page-width
+//
+// Maximum page (content) width. Default value: <code>1200px</code>.
+//
+// Style guide: settings.layout.max-widths.shila-max-page-width
+$shila-max-page-width: 1200px !default;
+
+
+// $shila-max-readable-width
+//
+// Maximum readable content width. Default value: <code>40em</code>.
+//
+// Style guide: settings.layout.max-widths.shila-max-readable-width
+$shila-max-readable-width: 40em !default;
+
+
+// Spacing
+//
+// Please note that the main spacing variables are in
+// <code>settings.core</code>.
+//
+// Style guide: settings.layout.spacing
+
+
+// $shila-side-spacings
+//
+// Sass map containing side spacings for different breakpoints. Default value:
+// <code>$shila-base-spacing</code> for all breakpoints.
+//
+// Style guide: settings.layout.spacing.shila-side-spacings
+$shila-side-spacings: (
+  'default': $shila-base-spacing,
+) !default;

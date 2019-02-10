@@ -1,0 +1,138 @@
+// @file
+// sass/partials/tools/_tools.lists.scss
+
+
+// tools.lists
+//
+// Style guide: tools.lists
+
+
+// shila-no-bullet
+//
+// <code>@mixin shila-no-bullet</code>
+//
+// Removes the list style and margin from a list item.
+//
+// Style guide: tools.lists.shila-no-bullet
+@mixin shila-no-bullet {
+  list-style-image: none;
+  list-style-type: none;
+  margin-left: 0;
+}
+
+
+// shila-no-bullets
+//
+// <code>@mixin shila-no-bullets</code>
+//
+// Removes the list style and margin from a list.
+//
+// Style guide: tools.lists.shila-no-bullets
+@mixin shila-no-bullets {
+  list-style: none;
+  li {
+    @include shila-no-bullet;
+  }
+}
+
+
+// shila-reset-list
+//
+// <code>@mixin shila-reset-list</code>
+//
+// Resets a list's box model measurements and removes the list style.
+//
+// Style guide: tools.lists.shila-reset-list
+@mixin shila-reset-list {
+  @include shila-reset-box-model;
+  @include shila-no-bullets;
+}
+
+
+// shila-inline-list
+//
+// <code>@mixin shila-inline-list($spacing: $shila-small-spacing, $reset: true)</code>
+//
+// Defines a horizontal list, with list items as inline blocks.
+//
+// $spacing - (Optional.) Spacing between list items.
+// $reset   - (Optional.) Boolean indicating whether to reset the list or not.
+//
+// Style guide: tools.lists.shila-inline-list
+@mixin shila-inline-list($spacing: $shila-small-spacing, $reset: true) {
+  @if $reset {
+    @include shila-reset-list;
+  }
+  li {
+    display: inline-block;
+  }
+  @if $spacing {
+    li + li {
+      margin-left: $spacing;
+    }
+  }
+}
+
+
+// shila-flexbox-list
+//
+// <code>@mixin shila-flexbox-list($spacing: $shila-small-spacing, $reset: true)</code>
+//
+// Defines a horizontal list using Flexbox.
+//
+// $spacing - (Optional.) Spacing between list items.
+// $reset   - (Optional.) Boolean indicating whether to reset the list or not.
+//
+// Style guide: tools.lists.shila-flexbox-list
+@mixin shila-flexbox-list($spacing: $shila-small-spacing, $reset: true) {
+  @if $reset {
+    @include shila-reset-list;
+  }
+  display: flex;
+  flex-wrap: wrap;
+  align-items: flex-start;
+  align-content: flex-start;
+  @if $spacing {
+    li + li {
+      margin-left: $spacing;
+    }
+  }
+}
+
+
+// shila-horizontal-nav
+//
+// <pre><code>@mixin shila-horizontal-nav(
+//   $spacing: $shila-small-spacing,
+//   $color: $shila-medium-gray,
+//   $active-color: $shila-dark-gray
+// )</code></pre>
+//
+// Defines a horizontal navigation element based on a list of links.
+//
+// $spacing - (Optional.) Spacing between list items.
+// $reset   - (Optional.) Boolean indicating whether to reset the list or not.
+//
+// Style guide: tools.lists.shila-horizontal-nav
+@mixin shila-horizontal-nav(
+  $spacing: $shila-small-spacing,
+  $color: $shila-medium-gray,
+  $active-color: $shila-dark-gray
+) {
+  @include shila-inline-list(false);
+  @include shila-flexbox-list($spacing, false);
+  text-align: center;
+  a {
+    color: $color;
+    text-decoration: none;
+    transition: color $shila-base-duration $shila-base-timing;
+    &:active,
+    &:focus,
+    &:hover {
+      color: $active-color;
+    }
+  }
+  .is-active {
+    color: $active-color;
+  }
+}

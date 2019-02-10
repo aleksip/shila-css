@@ -1,0 +1,42 @@
+// @file
+// sass/partials/tools/_tools.hidden.scss
+
+
+// tools.hidden
+//
+// Style guide: tools.hidden
+
+
+// shila-hide-text
+//
+// <code>@mixin shila-hide-text</code>
+//
+// Hides text in an element so you can see the background.
+//
+// Style guide: tools.hidden.shila-hide-text
+@mixin shila-hide-text {
+  text-indent: 110%;
+  white-space: nowrap;
+  overflow: hidden;
+}
+
+
+// shila-hide-visually
+//
+// <code>@mixin shila-hide-visually</code>
+//
+// Hides an element visually.
+//
+// Style guide: tools.hidden.shila-hide-visually
+@mixin shila-hide-visually {
+  border: 0 !important;
+  clip: rect(0 0 0 0) !important;
+  clip-path: inset(50%) !important;
+  height: 1px !important;
+  margin: -1px !important;
+  overflow: hidden !important;
+  padding: 0 !important;
+  position: absolute !important;
+  white-space: nowrap !important;
+  width: 1px !important;
+}

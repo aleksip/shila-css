@@ -1,5 +1,7 @@
-.idea/
-.sass-lint.yml
-css/
-gulpfile.js
-sources/
+/.idea/
+/css/
+/sources/
+/.sass-lint.yml
+/gulpfile.js
+/docs.md
+/kss-config.json

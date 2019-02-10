@@ -1,0 +1,82 @@
+// @file
+// sass/partials/tools/_tools.ratio.scss
+
+
+// tools.ratio
+//
+// Style guide: tools.ratio
+
+
+// shila-intrinsic-ratio
+//
+// <code>@mixin shila-intrinsic-ratio($ratio, $fit: null, $selector: '> :first-child')</code>
+//
+// Sets a fixed ratio for a child element. Supports different ways to fit the
+// content. The default is to scale both width and height so all content is
+// visible, but might be distorted. The optional <code>$fit</code> parameter can
+// be used to scale the content in only one dimension, possible overflow is
+// hidden.
+//
+// $ratio    - Ratio
+// $fit      - (Optional.) String value of either <code>width</code> or <code>height</code>.
+// $selector - (Optional.) Child element CSS selector.
+//
+// Style guide: tools.ratio.shila-intrinsic-ratio
+@mixin shila-intrinsic-ratio($ratio, $fit: null, $selector: '> :first-child') {
+  position: relative;
+  height: 0;
+  padding-bottom: $ratio * 100%;
+  overflow: hidden;
+  #{$selector} {
+    position: absolute;
+    top: 0;
+    @if $fit == 'width' {
+      left: 0;
+      width: 100%;
+      height: auto;
+    }
+    @else if $fit == 'height' {
+      left: 50%;
+      transform: translate(-50%, 0);
+      width: auto;
+      height: 100%;
+    }
+    @else {
+      left: 0;
+      width: 100%;
+      height: 100%;
+    }
+  }
+}
+
+
+// shila-minimum-ratio
+//
+// <code>@mixin shila-minimum-ratio($ratio, $selector: '> :first-child')</code>
+//
+// Sets a minimum ratio for a child element.
+//
+// $ratio    - Ratio
+// $selector - (Optional.) Child element CSS selector.
+//
+// Style guide: tools.ratio.shila-intrinsic-ratio
+@mixin shila-minimum-ratio($ratio, $selector: '> :first-child') {
+  @include shila-clearfix;
+  position: relative;
+  &::before {
+    content: '';
+    width: 1px;
+    margin-left: -1px;
+    float: left;
+    height: 0;
+    padding-top: $ratio * 100%;
+  }
+  #{$selector} {
+    position:  absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: auto;
+    min-height: 100%;
+  }
+}

@@ -1,0 +1,21 @@
+// @file
+// sass/partials/tools/_tools.reset.scss
+
+
+// tools.reset
+//
+// Style guide: tools.reset
+
+
+// shila-reset-box-model
+//
+// <code>@mixin shila-reset-box-model</code>
+//
+// Reset the box model measurements.
+//
+// Style guide: tools.reset.shila-reset-box-model
+@mixin shila-reset-box-model {
+  margin: 0;
+  padding: 0;
+  border: 0;
+}

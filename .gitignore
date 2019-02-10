@@ -1,4 +1,4 @@
-.idea/
-css/
-node_modules/
-sources/
+/.idea/
+/css/
+/node_modules/
+/sources/

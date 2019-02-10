@@ -1,0 +1,15 @@
+// @file
+// sass/partials/generic/_generic.box-sizing.scss
+
+
+// generic.box-sizing
+//
+// Resets <code>box-sizing</code> to <code>border-box</code>.
+//
+// Style guide: generic.box-sizing
+html {
+  box-sizing: border-box;
+}
+*, *:before, *:after {
+  box-sizing: inherit;
+}

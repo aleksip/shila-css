@@ -1,0 +1,246 @@
+// @file
+// sass/partials/settings/_settings.colors.scss
+
+
+// settings.colors
+//
+// Contains color variables.
+//
+// Weight: 1
+//
+// Style guide: settings.colors
+
+
+// Named colors
+//
+// Colors:
+// $shila-blue: #1565c0
+// $shila-white: hsl(0, 0%, 100%)
+// $shila-lightest-gray: hsl(0, 0%, 87.5%)
+// $shila-lighter-gray: hsl(0, 0%, 75%)
+// $shila-light-gray: hsl(0, 0%, 62.5%)
+// $shila-medium-gray: hsl(0, 0%, 50%)
+// $shila-dark-gray: hsl(0, 0%, 37.5%)
+// $shila-darker-gray: hsl(0, 0%, 25%)
+// $shila-darkest-gray: hsl(0, 0%, 12.5%)
+// $shila-black: hsl(0, 0%, 0%)
+// $shila-light-blue: #e5edf8
+// $shila-light-red: #fbe3e4
+// $shila-light-yellow: #fff6bf
+// $shila-light-green: #e6efc2
+//
+// Weight: 1
+//
+// Style guide: settings.colors.named
+$shila-blue: #1565c0 !default;
+$shila-white: hsl(0, 0%, 100%) !default;
+$shila-lightest-gray: hsl(0, 0%, 87.5%) !default;
+$shila-lighter-gray: hsl(0, 0%, 75%) !default;
+$shila-light-gray: hsl(0, 0%, 62.5%) !default;
+$shila-medium-gray: hsl(0, 0%, 50%) !default;
+$shila-dark-gray: hsl(0, 0%, 37.5%) !default;
+$shila-darker-gray: hsl(0, 0%, 25%) !default;
+$shila-darkest-gray: hsl(0, 0%, 12.5%) !default;
+$shila-black: hsl(0, 0%, 0%) !default;
+$shila-light-blue: #e5edf8 !default;
+$shila-light-red: #fbe3e4 !default;
+$shila-light-yellow: #fff6bf !default;
+$shila-light-green: #e6efc2 !default;
+
+
+// Base color
+//
+// A general purpose primary color with automatically generated variants.
+//
+// Weight: 2
+//
+// Style guide: settings.colors.base
+
+
+// $shila-base-color
+//
+// Default value: <code>$shila-blue</code>.
+//
+// Weight: -1
+//
+// Style guide: settings.colors.base.shila-base-color
+$shila-base-color: $shila-blue !default;
+
+
+// $shila-lightest-base-color
+//
+// Lightest base color variant.
+//
+// Style guide: settings.colors.base.shila-lightest-base-color
+$shila-lightest-base-color: shila-tint($shila-base-color, 75%) !default;
+
+
+// $shila-lighter-base-color
+//
+// Lighter base color variant.
+//
+// Style guide: settings.colors.base.shila-lighter-base-color
+$shila-lighter-base-color: shila-tint($shila-base-color, 50%);
+
+
+// $shila-light-base-color
+//
+// Light base color variant.
+//
+// Style guide: settings.colors.base.shila-light-base-color
+$shila-light-base-color: shila-tint($shila-base-color, 25%);
+
+
+// $shila-dark-base-color
+//
+// Dark base color variant.
+//
+// Style guide: settings.colors.base.shila-dark-base-color
+$shila-dark-base-color: shila-shade($shila-base-color, 25%);
+
+
+// $shila-darker-base-color
+//
+// Darker base color variant.
+//
+// Style guide: settings.colors.base.shila-darker-base-color
+$shila-darker-base-color: shila-shade($shila-base-color, 50%);
+
+
+// $shila-darkest-base-color
+//
+// Darkest base color variant.
+//
+// Style guide: settings.colors.base.shila-darkest-base-color
+$shila-darkest-base-color: shila-shade($shila-base-color, 75%);
+
+
+// Text
+//
+// Weight: 3
+//
+// Style guide: settings.colors.text
+
+
+// $shila-base-text-color
+//
+// Base text color. Default value: <code>$shila-darkest-gray</code>.
+//
+// Style guide: settings.colors.text.shila-base-text-color
+$shila-base-text-color: $shila-darkest-gray !default;
+
+
+// $shila-heading-color
+//
+// Color used for headings. Default value: <code>$shila-black</code>.
+//
+// Style guide: settings.colors.text.shila-heading-color
+$shila-heading-color: $shila-black !default;
+
+
+// Background
+//
+// Weight: 4
+//
+// Style guide: settings.colors.background
+
+
+// $shila-background-color
+//
+// General background color. Default value: <code>$shila-white</code>.
+//
+// Style guide: settings.colors.background.shila-background-color
+$shila-background-color: $shila-white !default;
+
+
+// $shila-page-background-color
+//
+// Page background color. Default value: <code>$shila-background-color</code>.
+//
+// Style guide: settings.colors.background.shila-page-background-color
+$shila-page-background-color: $shila-background-color !default;
+
+
+// $shila-content-background-color
+//
+// Content background color. Default value: <code>$shila-background-color</code>.
+//
+// Style guide: settings.colors.background.shila-content-background-color
+$shila-content-background-color: $shila-background-color !default;
+
+
+// $shila-form-element-background-color
+//
+// Form element background color. Default value:
+// <code>$shila-background-color</code>.
+//
+// Style guide: settings.colors.background.shila-content-background-color
+$shila-form-element-background-color: $shila-content-background-color !default;
+
+
+// Status
+//
+// Colors used for status messages and indicators.
+//
+// Weight: 5
+//
+// Style guide: settings.colors.status
+
+
+// $shila-info-color
+//
+// Info status color. Default value: <code>$shila-light-blue</code>.
+//
+// Style guide: settings.colors.status.shila-info-color
+$shila-info-color: $shila-light-blue !default;
+
+
+// $shila-success-color
+//
+// Success status color. Default value: <code>$shila-light-green</code>.
+//
+// Style guide: settings.colors.status.shila-success-color
+$shila-success-color: $shila-light-green !default;
+
+
+// $shila-warning-color
+//
+// Warning status color. Default value: <code>$shila-light-yellow</code>.
+//
+// Style guide: settings.colors.status.shila-warning-color
+$shila-warning-color: $shila-light-yellow !default;
+
+
+// $shila-error-color
+//
+// Error status color. Default value: <code>$shila-light-red</code>.
+//
+// Style guide: settings.colors.status.shila-error-color
+$shila-error-color: $shila-light-red !default;
+
+
+// Other
+//
+// Weight: 6
+//
+// Style guide: settings.colors.other
+
+
+// $shila-action-color
+//
+// A color that can be used for things such as links and action buttons.
+// Default value: <code>$shila-blue</code>.
+//
+// Style guide: settings.colors.other.shila-action-color
+$shila-action-color: $shila-blue !default;
+
+
+// $shila-base-border-color
+//
+// A color that can be used for different kinds of borders. Defaults
+// to <code>$shila-lightest-gray</code>.
+//
+// Style guide: settings.colors.other.shila-base-border-color
+$shila-base-border-color: $shila-lightest-gray !default;
+
+
