@@ -82,21 +82,23 @@
 
 // shila-multicol-layout
 //
-// <code>@mixin shila-multicol-layout($columns: null, $column-gap: null, $row-gap: null)</code>
+// <code>@mixin shila-multicol-layout($columns, $column-gap: null, $row-gap: null)</code>
 //
-// Defines a CSS grid based multi-column layout. All parameters are optional so
-// this mixin can be used to responsively change only the row and/or column
-// gap(s) of an existing grid.
+// Defines a CSS grid based multi-column layout. Defines a percentage-based
+// column width if a column gap is provided, otherwise uses the fr unit.
 //
-// $columns    - (Optional.) Number of columns.
+// $columns    - Number of columns.
 // $column-gap - (Optional.) Column gap.
 // $row-gap    - (Optional.) Row gap.
 //
 // Style guide: tools.layout.shila-multicol-layout
-@mixin shila-multicol-layout($columns: null, $column-gap: null, $row-gap: null) {
-  @if $columns {
-    display: grid;
+@mixin shila-multicol-layout($columns, $column-gap: null, $row-gap: null) {
+  display: grid;
+  @if $columns == 1 or not $column-gap {
     grid-template-columns: repeat(#{$columns}, 1fr);
+  }
+  @else {
+    grid-template-columns: repeat(#{$columns}, calc((100% - ((#{$columns} - 1) * #{$column-gap})) / #{$columns}));
   }
   @if $column-gap {
     grid-column-gap: $column-gap;
@@ -111,7 +113,7 @@
 //
 // <pre><code>@mixin shila-multicol-breakpoint-layout(
 //   $columns: ('default': 1, 's': 2, 'm': 3, 'l': 4),
-//   $column-gaps: ('s': $shila-base-spacing),
+//   $column-gaps: ('s': $shila-base-spacing, 'm': $shila-base-spacing, 'l': $shila-base-spacing),
 //   $row-gaps: ()
 // )</code></pre>
 //
@@ -124,7 +126,7 @@
 // Style guide: tools.layout.shila-multicol-layout
 @mixin shila-multicol-breakpoint-layout(
   $columns: ('default': 1, 's': 2, 'm': 3, 'l': 4),
-  $column-gaps: ('s': $shila-base-spacing),
+  $column-gaps: ('s': $shila-base-spacing, 'm': $shila-base-spacing, 'l': $shila-base-spacing),
   $row-gaps: ()
 ) {
   @each $breakpoint in join('default', map-keys($shila-breakpoints)) {
