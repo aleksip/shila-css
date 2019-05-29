@@ -11,14 +11,22 @@
 // Style guide: settings.selectors
 
 
-// Forms
+// $shila-all-headings
 //
-// Style guide: settings.selectors.forms
+// Style guide: settings.selectors.shila-all-headings
+$shila-all-headings: (
+  "h1",
+  "h2",
+  "h3",
+  "h4",
+  "h5",
+  "h6",
+) !default;
 
 
 // $shila-all-text-inputs
 //
-// Style guide: settings.selectors.forms.shila-all-text-inputs
+// Style guide: settings.selectors.shila-all-text-inputs
 $shila-all-text-inputs: (
   "input[type='color']",
   "input[type='date']",
@@ -39,14 +47,9 @@ $shila-all-text-inputs: (
 ) !default;
 
 
-// Buttons
-//
-// Style guide: settings.selectors.buttons
-
-
 // $shila-all-buttons
 //
-// Style guide: settings.selectors.buttons.shila-all-buttons
+// Style guide: settings.selectors.shila-all-buttons
 $shila-all-buttons: (
   "button",
   "input[type='button']",
