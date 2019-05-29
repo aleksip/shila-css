@@ -65,10 +65,11 @@
   }
   li {
     display: inline-block;
-  }
-  @if $spacing {
-    li + li {
-      margin-left: $spacing;
+    @if $spacing {
+      margin-right: $spacing;
+      &:last-child {
+        margin-right: 0;
+      }
     }
   }
 }
@@ -93,8 +94,11 @@
   align-items: flex-start;
   align-content: flex-start;
   @if $spacing {
-    li + li {
-      margin-left: $spacing;
+    li {
+      margin-right: $spacing;
+    }
+    li:last-child {
+      margin-right: 0;
     }
   }
 }
