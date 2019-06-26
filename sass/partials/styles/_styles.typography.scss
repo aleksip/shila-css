@@ -14,17 +14,9 @@ html {
   color: $shila-base-text-color;
   background-color: $shila-page-background-color;
 }
-h1,
-h2,
-h3,
-h4,
-h5,
-h6 {
+#{$shila-all-headings} {
   font-family: $shila-heading-font-family;
   color: $shila-heading-color;
-}
-p {
-  margin: 0 0 1rem;
 }
 a {
   color: $shila-action-color;

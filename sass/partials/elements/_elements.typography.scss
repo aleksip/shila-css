@@ -1,0 +1,41 @@
+// @file
+// sass/partials/elements/_elements.typography.scss
+
+
+// elements.typography
+//
+// Sets margins, font sizes and font weights.
+//
+// Style guide: elements.typography
+
+
+html {
+  @include shila-responsive-font-size($shila-base-font-sizes, $shila-base-line-heights, false);
+}
+#{$shila-all-headings} {
+  margin-bottom: $shila-base-spacing;
+  @if $shila-heading-font-weight != 700 {
+    font-weight: $shila-heading-font-weight;
+  }
+}
+h1 {
+  @include shila-h1-font-size;
+}
+h2 {
+  @include shila-h2-font-size;
+}
+h3 {
+  @include shila-h3-font-size;
+}
+h4 {
+  @include shila-h4-font-size;
+}
+h5 {
+  @include shila-h5-font-size;
+}
+h6 {
+  @include shila-h6-font-size;
+}
+p {
+  margin-bottom: $shila-base-spacing;
+}

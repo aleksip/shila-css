@@ -4,12 +4,11 @@
 
 // elements.page
 //
-// Sets responsive default font size and 100 % minimum page height.
+// Sets 100 % minimum page height.
 //
 // Style guide: elements.page
 
 
 html {
-  @include shila-responsive-font-size($shila-base-font-sizes, $shila-base-line-heights, false);
   min-height: 100%;
 }
