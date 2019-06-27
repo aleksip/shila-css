@@ -62,21 +62,24 @@
         <h3 class="kss-title kss-title--level-3">
           <a class="kss-title__permalink" href="#kssref-tools-layout-shila-multicol-layout">
             <span class="kss-title__ref">
-              2.5.1
+              2.5.3
               <span class="kss-title__permalink-hash">
                   #tools.layout.shila-multicol-layout
               </span>
             </span>
-            shila-multicol-layout
+            shila-multicol-breakpoint-layout
           </a>
         </h3>
 
 
           <div class="kss-description">
-            <p><code>@mixin shila-multicol-layout($columns: null, $column-gap: null, $row-gap: null)</code></p>
-<p>Defines a CSS grid based multi-column layout. All parameters are optional so
-this mixin can be used to responsively change only the row and/or column
-gap(s) of an existing grid.</p>
+            <pre><code>@mixin shila-multicol-breakpoint-layout(
+  $columns: ("s": 2, "m": 3, "l": 4),
+  $column-gaps: ("s": $shila-base-spacing, "m": $shila-base-spacing, "l": $shila-base-spacing),
+  $row-gaps: (),
+  $type: "flexbox"
+)</code></pre>
+<p>Defines CSS multi-column layouts for different breakpoints.</p>
 
           </div>
 
@@ -86,19 +89,25 @@ gap(s) of an existing grid.</p>
             <li class="kss-parameters__item">
               <div class="kss-parameters__name"><code>$columns</code></div>
               <div class="kss-parameters__description">
-                (Optional.) Number of columns.
+                Sass map with columns keyed by breakpoints.
               </div>
             </li>
             <li class="kss-parameters__item">
-              <div class="kss-parameters__name"><code>$column-gap</code></div>
+              <div class="kss-parameters__name"><code>$column-gaps</code></div>
               <div class="kss-parameters__description">
-                (Optional.) Column gap.
+                Sass map with column gaps keyed by breakpoints.
               </div>
             </li>
             <li class="kss-parameters__item">
-              <div class="kss-parameters__name"><code>$row-gap</code></div>
+              <div class="kss-parameters__name"><code>$row-gaps</code></div>
               <div class="kss-parameters__description">
-                (Optional.) Row gap.
+                Sass map with row gaps keyed by breakpoints.
+              </div>
+            </li>
+            <li class="kss-parameters__item">
+              <div class="kss-parameters__name"><code>$type</code></div>
+              <div class="kss-parameters__description">
+                &quot;flexbox&quot; (default value) or &quot;css-grid&quot;.
               </div>
             </li>
           </ul>
@@ -106,7 +115,7 @@ gap(s) of an existing grid.</p>
 
 
         <div class="kss-source kss-style">
-          Source: <code>partials/tools/_tools.layout.scss</code>, line 83
+          Source: <code>partials/tools/_tools.layout.scss</code>, line 132
         </div>
 
     </div>
@@ -141,8 +150,5 @@ gap(s) of an existing grid.</p>
 
 
 <!-- Automatically built using <a href="https://github.com/kss-node/kss-node">kss-node</a>. -->
-</body>
-</html>
-de/kss-node">kss-node</a>. -->
 </body>
 </html>

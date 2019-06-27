@@ -139,14 +139,20 @@
                 </a>
               </li>
               <li class="kss-nav__menu-item">
-                <a class="kss-nav__menu-link" href="section-settings.html#kssref-settings-layout-max-widths">
+                <a class="kss-nav__menu-link" href="section-settings.html#kssref-settings-layout-breakpoints">
                   <span class="kss-nav__ref kss-nav__ref-child">1.4.1</span
+                  ><span class="kss-nav__name">Breakpoints</span>
+                </a>
+              </li>
+              <li class="kss-nav__menu-item">
+                <a class="kss-nav__menu-link" href="section-settings.html#kssref-settings-layout-max-widths">
+                  <span class="kss-nav__ref kss-nav__ref-child">1.4.2</span
                   ><span class="kss-nav__name">Maximum widths</span>
                 </a>
               </li>
               <li class="kss-nav__menu-item">
                 <a class="kss-nav__menu-link" href="section-settings.html#kssref-settings-layout-spacing">
-                  <span class="kss-nav__ref kss-nav__ref-child">1.4.2</span
+                  <span class="kss-nav__ref kss-nav__ref-child">1.4.3</span
                   ><span class="kss-nav__name">Spacing</span>
                 </a>
               </li>
@@ -157,15 +163,21 @@
                 </a>
               </li>
               <li class="kss-nav__menu-item">
-                <a class="kss-nav__menu-link" href="section-settings.html#kssref-settings-selectors-buttons">
+                <a class="kss-nav__menu-link" href="section-settings.html#kssref-settings-selectors-shila-all-buttons">
                   <span class="kss-nav__ref kss-nav__ref-child">1.5.1</span
-                  ><span class="kss-nav__name">Buttons</span>
+                  ><span class="kss-nav__name">$shila-all-buttons</span>
                 </a>
               </li>
               <li class="kss-nav__menu-item">
-                <a class="kss-nav__menu-link" href="section-settings.html#kssref-settings-selectors-forms">
+                <a class="kss-nav__menu-link" href="section-settings.html#kssref-settings-selectors-shila-all-headings">
                   <span class="kss-nav__ref kss-nav__ref-child">1.5.2</span
-                  ><span class="kss-nav__name">Forms</span>
+                  ><span class="kss-nav__name">$shila-all-headings</span>
+                </a>
+              </li>
+              <li class="kss-nav__menu-item">
+                <a class="kss-nav__menu-link" href="section-settings.html#kssref-settings-selectors-shila-all-text-inputs">
+                  <span class="kss-nav__ref kss-nav__ref-child">1.5.3</span
+                  ><span class="kss-nav__name">$shila-all-text-inputs</span>
                 </a>
               </li>
               <li class="kss-nav__menu-item">
@@ -265,8 +277,8 @@
           <div class="kss-description">
             <p>Contains core framework variables for responsive design, typography and
 spacing. This should be the second file imported from <code>shila-css</code>.
-The first file should be <code>tools.core</code>, which contains functions
-used in this file.</p>
+The first imported file should be <code>tools.core</code>, which contains
+functions used in <code>settings.core</code>.</p>
 
           </div>
 
@@ -1321,6 +1333,36 @@ Default value: <code>default</code> in <code>$shila-base-line-heights</code>.</p
                   #settings.colors.background.shila-content-background-color
               </span>
             </span>
+            $shila-content-background-color
+          </a>
+        </h4>
+
+
+          <div class="kss-description">
+            <p>Content background color. Default value: <code>$shila-background-color</code>.</p>
+
+          </div>
+
+
+      </div>
+
+
+        <div class="kss-source kss-style">
+          Source: <code>partials/settings/_settings.colors.scss</code>, line 164
+        </div>
+
+    </section>
+    <section id="kssref-settings-colors-background-shila-content-background-color" class="kss-section kss-section--depth-4 ">
+
+      <div class="kss-style">
+        <h4 class="kss-title kss-title--level-4">
+          <a class="kss-title__permalink" href="#kssref-settings-colors-background-shila-content-background-color">
+            <span class="kss-title__ref">
+              1.2.4.2
+              <span class="kss-title__permalink-hash">
+                  #settings.colors.background.shila-content-background-color
+              </span>
+            </span>
             $shila-form-element-background-color
           </a>
         </h4>
@@ -1338,36 +1380,6 @@ Default value: <code>default</code> in <code>$shila-base-line-heights</code>.</p
 
         <div class="kss-source kss-style">
           Source: <code>partials/settings/_settings.colors.scss</code>, line 172
-        </div>
-
-    </section>
-    <section id="kssref-settings-colors-background-shila-content-background-color" class="kss-section kss-section--depth-4 ">
-
-      <div class="kss-style">
-        <h4 class="kss-title kss-title--level-4">
-          <a class="kss-title__permalink" href="#kssref-settings-colors-background-shila-content-background-color">
-            <span class="kss-title__ref">
-              1.2.4.2
-              <span class="kss-title__permalink-hash">
-                  #settings.colors.background.shila-content-background-color
-              </span>
-            </span>
-            $shila-content-background-color
-          </a>
-        </h4>
-
-
-          <div class="kss-description">
-            <p>Content background color. Default value: <code>$shila-background-color</code>.</p>
-
-          </div>
-
-
-      </div>
-
-
-        <div class="kss-source kss-style">
-          Source: <code>partials/settings/_settings.colors.scss</code>, line 164
         </div>
 
     </section>
@@ -2363,13 +2375,99 @@ variables for common use cases.</p>
         </div>
 
     </section>
+    <section id="kssref-settings-layout-breakpoints" class="kss-section kss-section--depth-3 ">
+
+      <div class="kss-style">
+        <h3 class="kss-title kss-title--level-3">
+          <a class="kss-title__permalink" href="#kssref-settings-layout-breakpoints">
+            <span class="kss-title__ref">
+              1.4.1
+              <span class="kss-title__permalink-hash">
+                  #settings.layout.breakpoints
+              </span>
+            </span>
+            Breakpoints
+          </a>
+        </h3>
+
+
+
+
+      </div>
+
+
+        <div class="kss-source kss-style">
+          Source: <code>partials/settings/_settings.layout.scss</code>, line 15
+        </div>
+
+    </section>
+    <section id="kssref-settings-layout-breakpoints-shila-side-spacings" class="kss-section kss-section--depth-4 ">
+
+      <div class="kss-style">
+        <h4 class="kss-title kss-title--level-4">
+          <a class="kss-title__permalink" href="#kssref-settings-layout-breakpoints-shila-side-spacings">
+            <span class="kss-title__ref">
+              1.4.1.1
+              <span class="kss-title__permalink-hash">
+                  #settings.layout.breakpoints.shila-side-spacings
+              </span>
+            </span>
+            $shila-large-navigation-break
+          </a>
+        </h4>
+
+
+          <div class="kss-description">
+            <p>Breakpoint for large screen navigation and related components.</p>
+
+          </div>
+
+
+      </div>
+
+
+        <div class="kss-source kss-style">
+          Source: <code>partials/settings/_settings.layout.scss</code>, line 20
+        </div>
+
+    </section>
+    <section id="kssref-settings-layout-breakpoints-shila-side-spacings" class="kss-section kss-section--depth-4 ">
+
+      <div class="kss-style">
+        <h4 class="kss-title kss-title--level-4">
+          <a class="kss-title__permalink" href="#kssref-settings-layout-breakpoints-shila-side-spacings">
+            <span class="kss-title__ref">
+              1.4.1.1
+              <span class="kss-title__permalink-hash">
+                  #settings.layout.breakpoints.shila-side-spacings
+              </span>
+            </span>
+            $shila-small-navigation-break
+          </a>
+        </h4>
+
+
+          <div class="kss-description">
+            <p>Max-width breakpoint for small screen navigation and related components.</p>
+
+          </div>
+
+
+      </div>
+
+
+        <div class="kss-source kss-style">
+          Source: <code>partials/settings/_settings.layout.scss</code>, line 28
+        </div>
+
+    </section>
     <section id="kssref-settings-layout-max-widths" class="kss-section kss-section--depth-3 ">
 
       <div class="kss-style">
         <h3 class="kss-title kss-title--level-3">
           <a class="kss-title__permalink" href="#kssref-settings-layout-max-widths">
             <span class="kss-title__ref">
-              1.4.1
+              1.4.2
               <span class="kss-title__permalink-hash">
                   #settings.layout.max-widths
               </span>
@@ -2385,7 +2483,7 @@ variables for common use cases.</p>
 
 
         <div class="kss-source kss-style">
-          Source: <code>partials/settings/_settings.layout.scss</code>, line 15
+          Source: <code>partials/settings/_settings.layout.scss</code>, line 36
         </div>
 
     </section>
@@ -2395,7 +2493,7 @@ variables for common use cases.</p>
         <h4 class="kss-title kss-title--level-4">
           <a class="kss-title__permalink" href="#kssref-settings-layout-max-widths-shila-max-page-width">
             <span class="kss-title__ref">
-              1.4.1.1
+              1.4.2.1
               <span class="kss-title__permalink-hash">
                   #settings.layout.max-widths.shila-max-page-width
               </span>
@@ -2415,7 +2513,7 @@ variables for common use cases.</p>
 
 
         <div class="kss-source kss-style">
-          Source: <code>partials/settings/_settings.layout.scss</code>, line 20
+          Source: <code>partials/settings/_settings.layout.scss</code>, line 41
         </div>
 
     </section>
@@ -2425,7 +2523,7 @@ variables for common use cases.</p>
         <h4 class="kss-title kss-title--level-4">
           <a class="kss-title__permalink" href="#kssref-settings-layout-max-widths-shila-max-readable-width">
             <span class="kss-title__ref">
-              1.4.1.2
+              1.4.2.2
               <span class="kss-title__permalink-hash">
                   #settings.layout.max-widths.shila-max-readable-width
               </span>
@@ -2445,7 +2543,7 @@ variables for common use cases.</p>
 
 
         <div class="kss-source kss-style">
-          Source: <code>partials/settings/_settings.layout.scss</code>, line 28
+          Source: <code>partials/settings/_settings.layout.scss</code>, line 49
         </div>
 
     </section>
@@ -2455,7 +2553,7 @@ variables for common use cases.</p>
         <h3 class="kss-title kss-title--level-3">
           <a class="kss-title__permalink" href="#kssref-settings-layout-spacing">
             <span class="kss-title__ref">
-              1.4.2
+              1.4.3
               <span class="kss-title__permalink-hash">
                   #settings.layout.spacing
               </span>
@@ -2476,7 +2574,7 @@ variables for common use cases.</p>
 
 
         <div class="kss-source kss-style">
-          Source: <code>partials/settings/_settings.layout.scss</code>, line 36
+          Source: <code>partials/settings/_settings.layout.scss</code>, line 57
         </div>
 
     </section>
@@ -2486,7 +2584,7 @@ variables for common use cases.</p>
         <h4 class="kss-title kss-title--level-4">
           <a class="kss-title__permalink" href="#kssref-settings-layout-spacing-shila-side-spacings">
             <span class="kss-title__ref">
-              1.4.2.1
+              1.4.3.1
               <span class="kss-title__permalink-hash">
                   #settings.layout.spacing.shila-side-spacings
               </span>
@@ -2507,7 +2605,7 @@ variables for common use cases.</p>
 
 
         <div class="kss-source kss-style">
-          Source: <code>partials/settings/_settings.layout.scss</code>, line 44
+          Source: <code>partials/settings/_settings.layout.scss</code>, line 65
         </div>
 
     </section>
@@ -2541,18 +2639,18 @@ variables for common use cases.</p>
         </div>
 
     </section>
-    <section id="kssref-settings-selectors-buttons" class="kss-section kss-section--depth-3 ">
+    <section id="kssref-settings-selectors-shila-all-buttons" class="kss-section kss-section--depth-3 ">
 
       <div class="kss-style">
         <h3 class="kss-title kss-title--level-3">
-          <a class="kss-title__permalink" href="#kssref-settings-selectors-buttons">
+          <a class="kss-title__permalink" href="#kssref-settings-selectors-shila-all-buttons">
             <span class="kss-title__ref">
               1.5.1
               <span class="kss-title__permalink-hash">
-                  #settings.selectors.buttons
+                  #settings.selectors.shila-all-buttons
               </span>
             </span>
-            Buttons
+            $shila-all-buttons
           </a>
         </h3>
 
@@ -2563,48 +2661,22 @@ variables for common use cases.</p>
 
 
         <div class="kss-source kss-style">
-          Source: <code>partials/settings/_settings.selectors.scss</code>, line 42
+          Source: <code>partials/settings/_settings.selectors.scss</code>, line 50
         </div>
 
     </section>
-    <section id="kssref-settings-selectors-buttons-shila-all-buttons" class="kss-section kss-section--depth-4 ">
-
-      <div class="kss-style">
-        <h4 class="kss-title kss-title--level-4">
-          <a class="kss-title__permalink" href="#kssref-settings-selectors-buttons-shila-all-buttons">
-            <span class="kss-title__ref">
-              1.5.1.1
-              <span class="kss-title__permalink-hash">
-                  #settings.selectors.buttons.shila-all-buttons
-              </span>
-            </span>
-            $shila-all-buttons
-          </a>
-        </h4>
-
-
-
-
-      </div>
-
-
-        <div class="kss-source kss-style">
-          Source: <code>partials/settings/_settings.selectors.scss</code>, line 47
-        </div>
-
-    </section>
-    <section id="kssref-settings-selectors-forms" class="kss-section kss-section--depth-3 ">
+    <section id="kssref-settings-selectors-shila-all-headings" class="kss-section kss-section--depth-3 ">
 
       <div class="kss-style">
         <h3 class="kss-title kss-title--level-3">
-          <a class="kss-title__permalink" href="#kssref-settings-selectors-forms">
+          <a class="kss-title__permalink" href="#kssref-settings-selectors-shila-all-headings">
             <span class="kss-title__ref">
               1.5.2
               <span class="kss-title__permalink-hash">
-                  #settings.selectors.forms
+                  #settings.selectors.shila-all-headings
               </span>
             </span>
-            Forms
+            $shila-all-headings
           </a>
         </h3>
 
@@ -2619,20 +2691,20 @@ variables for common use cases.</p>
         </div>
 
     </section>
-    <section id="kssref-settings-selectors-forms-shila-all-text-inputs" class="kss-section kss-section--depth-4 ">
+    <section id="kssref-settings-selectors-shila-all-text-inputs" class="kss-section kss-section--depth-3 ">
 
       <div class="kss-style">
-        <h4 class="kss-title kss-title--level-4">
-          <a class="kss-title__permalink" href="#kssref-settings-selectors-forms-shila-all-text-inputs">
+        <h3 class="kss-title kss-title--level-3">
+          <a class="kss-title__permalink" href="#kssref-settings-selectors-shila-all-text-inputs">
             <span class="kss-title__ref">
-              1.5.2.1
+              1.5.3
               <span class="kss-title__permalink-hash">
-                  #settings.selectors.forms.shila-all-text-inputs
+                  #settings.selectors.shila-all-text-inputs
               </span>
             </span>
             $shila-all-text-inputs
           </a>
-        </h4>
+        </h3>
 
 
 
@@ -2641,7 +2713,7 @@ variables for common use cases.</p>
 
 
         <div class="kss-source kss-style">
-          Source: <code>partials/settings/_settings.selectors.scss</code>, line 19
+          Source: <code>partials/settings/_settings.selectors.scss</code>, line 27
         </div>
 
     </section>

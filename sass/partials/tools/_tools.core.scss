@@ -21,7 +21,7 @@
 // the optionally provided breakpoint.
 //
 // $px         - Size in pixels.
-// $breakpoint - Optional. Breakpoint key in <code>$shila-base-font-sizes</code>.
+// $breakpoint - (Optional.) Breakpoint key in <code>$shila-base-font-sizes</code>.
 //
 // Style guide: tools.core.shila-px-to-rem
 @function shila-px-to-rem($px, $breakpoint: "default") {
