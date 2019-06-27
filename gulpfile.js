@@ -6,7 +6,7 @@
 
 var gulp = require('gulp');
 var sass = require('gulp-sass');
-var sassLint = require('gulp-sass-lint');
+var stylelint = require('gulp-stylelint');
 
 // Gulp tasks.
 
@@ -16,18 +16,20 @@ var sassLint = require('gulp-sass-lint');
 gulp.task('sass', function () {
   return gulp.src('./sass/*.scss')
     .pipe(sass().on('error', sass.logError))
-    .pipe(gulp.dest('./css'))
-  ;
+    .pipe(gulp.dest('./css'));
 });
 
 /**
  * Lints Sass files.
  */
 gulp.task('lint', function () {
-  return gulp.src('./sass/*.scss')
-    .pipe(sassLint())
-    .pipe(sassLint.format())
-  ;
+  return gulp.src('./sass/**/*.scss')
+    .pipe(stylelint({
+      failAfterError: false,
+      reporters: [
+        { formatter: 'string', console: true }
+      ]
+    }));
 });
 
 /**
