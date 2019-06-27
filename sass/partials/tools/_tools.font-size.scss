@@ -28,11 +28,11 @@
 @mixin shila-breakpoint-font-size($breakpoint, $font-sizes, $line-heights: (), $rem: true) {
   @if map-has-key($font-sizes, $breakpoint) {
     $font-size: map-get($font-sizes, $breakpoint);
-    @if type-of($font-size) != 'number' {
+    @if type-of($font-size) != "number" {
       $type: type-of($font-size);
       @error "Font size value '#{$font-size}' shoud be a number but it is a #{$type}";
     }
-    @if $rem == true and unit($font-size) == 'px' {
+    @if $rem == true and unit($font-size) == "px" {
       $font-size: shila-px-to-rem($font-size, $breakpoint);
     }
     font-size: $font-size;
@@ -58,9 +58,9 @@
 //
 // Style guide: tools.font-size.shila-responsive-font-sizes
 @mixin shila-responsive-font-size($font-sizes, $line-heights: (), $rem: true) {
-  @each $breakpoint in join('default', map-keys($shila-breakpoints)) {
+  @each $breakpoint in join("default", map-keys($shila-breakpoints)) {
     @if map-has-key($font-sizes, $breakpoint) or map-has-key($line-heights, $breakpoint) {
-      @if $breakpoint == 'default' {
+      @if $breakpoint == "default" {
         @include shila-breakpoint-font-size($breakpoint, $font-sizes, $line-heights, $rem);
       }
       @else {

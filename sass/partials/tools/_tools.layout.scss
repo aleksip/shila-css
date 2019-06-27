@@ -33,9 +33,9 @@
 //
 // Style guide: tools.layout.shila-responsive-side-margins
 @mixin shila-responsive-side-margins($margins: $shila-side-spacings) {
-  @each $breakpoint in join('default', map-keys($shila-breakpoints)) {
+  @each $breakpoint in join("default", map-keys($shila-breakpoints)) {
     @if map-has-key($margins, $breakpoint) {
-      @if $breakpoint == 'default' {
+      @if $breakpoint == "default" {
         @include shila-side-margins(map-get($margins, $breakpoint));
       }
       @else {
@@ -132,10 +132,10 @@
 // shila-multicol-breakpoint-layout
 //
 // <pre><code>@mixin shila-multicol-breakpoint-layout(
-//   $columns: ('s': 2, 'm': 3, 'l': 4),
-//   $column-gaps: ('s': $shila-base-spacing, 'm': $shila-base-spacing, 'l': $shila-base-spacing),
+//   $columns: ("s": 2, "m": 3, "l": 4),
+//   $column-gaps: ("s": $shila-base-spacing, "m": $shila-base-spacing, "l": $shila-base-spacing),
 //   $row-gaps: (),
-//   $type: 'flexbox'
+//   $type: "flexbox"
 // )</code></pre>
 //
 // Defines CSS multi-column layouts for different breakpoints.
@@ -143,22 +143,22 @@
 // $columns     - Sass map with columns keyed by breakpoints.
 // $column-gaps - Sass map with column gaps keyed by breakpoints.
 // $row-gaps    - Sass map with row gaps keyed by breakpoints.
-// $type        - 'flexbox' (default value) or 'css-grid'.
+// $type        - "flexbox" (default value) or "css-grid".
 //
 // Style guide: tools.layout.shila-multicol-layout
 @mixin shila-multicol-breakpoint-layout(
-  $columns: ('s': 2, 'm': 3, 'l': 4),
-  $column-gaps: ('s': $shila-base-spacing, 'm': $shila-base-spacing, 'l': $shila-base-spacing),
+  $columns: ("s": 2, "m": 3, "l": 4),
+  $column-gaps: ("s": $shila-base-spacing, "m": $shila-base-spacing, "l": $shila-base-spacing),
   $row-gaps: (),
-  $type: 'flexbox'
+  $type: "flexbox"
 ) {
-  @each $breakpoint in join('default', map-keys($shila-breakpoints)) {
+  @each $breakpoint in join("default", map-keys($shila-breakpoints)) {
     @if map-has-key($columns, $breakpoint) {
       $cols: map-get($columns, $breakpoint);
       $column-gap: map-get($column-gaps, $breakpoint);
       $row-gap: map-get($row-gaps, $breakpoint);
-      @if $breakpoint == 'default' {
-        @if $type == 'css-grid' {
+      @if $breakpoint == "default" {
+        @if $type == "css-grid" {
           @include shila-css-grid-multicol-layout($cols, $column-gap, $row-gap);
         }
         @else {
@@ -167,7 +167,7 @@
       }
       @else {
         @include breakpoint(shila-breakpoint($breakpoint)) {
-          @if $type == 'css-grid' {
+          @if $type == "css-grid" {
             @include shila-css-grid-multicol-layout($cols, $column-gap, $row-gap);
           }
           @else {

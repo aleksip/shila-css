@@ -9,7 +9,7 @@
 
 // shila-intrinsic-ratio
 //
-// <code>@mixin shila-intrinsic-ratio($ratio, $fit: null, $selector: '> :first-child')</code>
+// <code>@mixin shila-intrinsic-ratio($ratio, $fit: null, $selector: "> :first-child")</code>
 //
 // Sets a fixed ratio for a child element. Supports different ways to fit the
 // content. The default is to scale both width and height so all content is
@@ -22,7 +22,7 @@
 // $selector - (Optional.) Child element CSS selector.
 //
 // Style guide: tools.ratio.shila-intrinsic-ratio
-@mixin shila-intrinsic-ratio($ratio, $fit: null, $selector: '> :first-child') {
+@mixin shila-intrinsic-ratio($ratio, $fit: null, $selector: "> :first-child") {
   position: relative;
   height: 0;
   padding-bottom: $ratio * 100%;
@@ -30,12 +30,12 @@
   #{$selector} {
     position: absolute;
     top: 0;
-    @if $fit == 'width' {
+    @if $fit == "width" {
       left: 0;
       width: 100%;
       height: auto;
     }
-    @else if $fit == 'height' {
+    @else if $fit == "height" {
       left: 50%;
       transform: translate(-50%, 0);
       width: auto;
@@ -52,7 +52,7 @@
 
 // shila-minimum-ratio
 //
-// <code>@mixin shila-minimum-ratio($ratio, $selector: '> :first-child')</code>
+// <code>@mixin shila-minimum-ratio($ratio, $selector: "> :first-child")</code>
 //
 // Sets a minimum ratio for a child element.
 //
@@ -60,11 +60,11 @@
 // $selector - (Optional.) Child element CSS selector.
 //
 // Style guide: tools.ratio.shila-intrinsic-ratio
-@mixin shila-minimum-ratio($ratio, $selector: '> :first-child') {
+@mixin shila-minimum-ratio($ratio, $selector: "> :first-child") {
   @include shila-clearfix;
   position: relative;
   &::before {
-    content: '';
+    content: "";
     width: 1px;
     margin-left: -1px;
     float: left;
@@ -72,7 +72,7 @@
     padding-top: $ratio * 100%;
   }
   #{$selector} {
-    position:  absolute;
+    position: absolute;
     left: 0;
     top: 0;
     width: 100%;

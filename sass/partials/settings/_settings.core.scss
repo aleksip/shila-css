@@ -62,10 +62,10 @@ $shila-xs-break: max-width $shila-s-break - 1 !default;
 //
 // Style guide: settings.core.breakpoints.shila-breakpoints.
 $shila-breakpoints: (
-  'xs': $shila-xs-break,
-  's':  $shila-s-break,
-  'm':  $shila-m-break,
-  'l':  $shila-l-break,
+  "xs": $shila-xs-break,
+  "s":  $shila-s-break,
+  "m":  $shila-m-break,
+  "l":  $shila-l-break,
 ) !default;
 
 
@@ -86,7 +86,7 @@ $shila-breakpoints: (
 //
 // Style guide: settings.core.typography.shila-base-font-sizes
 $shila-base-font-sizes: (
-  'default': 16px,
+  "default": 16px,
 ) !default;
 
 
@@ -97,7 +97,7 @@ $shila-base-font-sizes: (
 //
 // Style guide: settings.core.typography.shila-base-line-heights
 $shila-base-line-heights: (
-  'default': shila-line-height(21px)
+  "default": shila-line-height(21px)
 ) !default;
 
 
@@ -114,11 +114,11 @@ $shila-base-line-heights: (
 // Default value: <code>default</code> in <code>$shila-base-line-heights</code>.
 //
 // Style guide: settings.core.spacing.shila-base-spacing
-$shila-base-spacing: map-get($shila-base-line-heights, 'default') * 1rem !default;
+$shila-base-spacing: map-get($shila-base-line-heights, "default") * 1rem !default;
 
 
-$shila-tiny-spacing-factor: .25 !default;
-$shila-small-spacing-factor: .5 !default;
+$shila-tiny-spacing-factor: 0.25 !default;
+$shila-small-spacing-factor: 0.5 !default;
 $shila-large-spacing-factor: 2 !default;
 $shila-huge-spacing-factor: 4 !default;
 
