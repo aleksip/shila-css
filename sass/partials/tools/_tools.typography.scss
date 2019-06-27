@@ -1,0 +1,107 @@
+// @file
+// sass/partials/tools/_tools.typography.scss
+
+
+// tools.typography
+//
+// Contains mixins related to typography.
+//
+// Style guide: tools.typography
+
+
+// shila-inherit-font-style
+//
+// <code>@mixin shila-inherit-font-style</code>
+//
+// Style guide: tools.typography.shila-inherit-font-style
+@mixin shila-inherit-font-style {
+  font-family: inherit;
+  font-size: inherit;
+  font-weight: inherit;
+  color: inherit;
+}
+
+
+// shila-heading-font-style
+//
+// <code>@mixin shila-heading-font-style</code>
+//
+// Sets heading styles with the exception of font-size.
+//
+// Style guide: tools.typography.shila-heading-font-style
+@mixin shila-heading-font-style {
+  font-family: $shila-heading-font-family;
+  font-weight: $shila-heading-font-weight;
+  color: $shila-heading-color;
+}
+
+
+// Shorthands
+//
+// Style guide: tools.typography.shorthands
+
+
+// shila-h1-font-style
+//
+// <code>@mixin shila-h1-font-style</code>
+//
+// Style guide: tools.typography.shorthands.shila-h1-font-style
+@mixin shila-h1-font-style {
+  @include shila-h1-font-size;
+  @include shila-heading-font-style;
+}
+
+
+// shila-h2-font-style
+//
+// <code>@mixin shila-h2-font-style</code>
+//
+// Style guide: tools.typography.shorthands.shila-h2-font-style
+@mixin shila-h2-font-style {
+  @include shila-h2-font-size;
+  @include shila-heading-font-style;
+}
+
+
+// shila-h3-font-style
+//
+// <code>@mixin shila-h3-font-style</code>
+//
+// Style guide: tools.typography.shorthands.shila-h3-font-style
+@mixin shila-h3-font-style {
+  @include shila-h3-font-size;
+  @include shila-heading-font-style;
+}
+
+
+// shila-h4-font-style
+//
+// <code>@mixin shila-h4-font-style</code>
+//
+// Style guide: tools.typography.shorthands.shila-h4-font-style
+@mixin shila-h4-font-style {
+  @include shila-h4-font-size;
+  @include shila-heading-font-style;
+}
+
+
+// shila-h5-font-style
+//
+// <code>@mixin shila-h5-font-style</code>
+//
+// Style guide: tools.typography.shorthands.shila-h5-font-style
+@mixin shila-h5-font-style {
+  @include shila-h5-font-size;
+  @include shila-heading-font-style;
+}
+
+
+// shila-h6-font-style
+//
+// <code>@mixin shila-h6-font-style</code>
+//
+// Style guide: tools.typography.shorthands.shila-h6-font-style
+@mixin shila-h6-font-style {
+  @include shila-h6-font-size;
+  @include shila-heading-font-style;
+}
