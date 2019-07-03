@@ -1,6 +1,6 @@
 {
   "name": "shila-css",
-  "version": "1.0.0-beta.2",
+  "version": "1.0.0",
   "description": "Sass-based CSS framework",
   "repository": {
     "type": "git",
