@@ -1,7 +1,8 @@
 {
   "extends": "stylelint-config-standard",
   "plugins": [
-    "stylelint-no-browser-hacks/lib"
+    "stylelint-no-browser-hacks/lib",
+    "stylelint-scss"
   ],
   "rules": {
     "comment-empty-line-before": null,
@@ -34,15 +35,13 @@
     "string-quotes": "double",
     "unit-whitelist": ["deg", "em", "ex", "ms", "rem", "%", "s", "px", "vw", "vh"],
     "at-rule-empty-line-before": null,
-    "at-rule-blacklist": ["debug"],
-    "at-rule-no-unknown": [true, {
-      "ignoreAtRules": ["function", "each", "else", "error", "if", "include", "mixin", "return"]
-    }],
-    "declaration-empty-line-before": "never",
+    "at-rule-no-unknown": null,
+    "declaration-empty-line-before": null,
     "font-family-no-duplicate-names": [true, {
       "ignoreFontFamilyNames": ["monospace"]
     }],
-    "max-empty-lines": 2
+    "max-empty-lines": 2,
+    "scss/at-rule-no-unknown": true
   },
   "ignoreFiles": [
     "assets/vendor/**/*.css",
