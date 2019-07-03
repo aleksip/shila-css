@@ -14,21 +14,27 @@ html {
   color: $shila-base-text-color;
   background-color: $shila-page-background-color;
 }
+
 #{$shila-all-headings} {
   font-family: $shila-heading-font-family;
   color: $shila-heading-color;
 }
+
 a {
   color: $shila-action-color;
-  text-decoration: none;
+  text-decoration-skip: ink;
   transition: color $shila-base-duration $shila-base-timing;
-  &:active,
-  &:focus,
+
   &:hover {
     color: shila-shade($shila-action-color, 25%);
-    text-decoration: underline;
+  }
+
+  &:focus {
+    outline: $shila-focus-outline;
+    outline-offset: $shila-focus-outline-offset;
   }
 }
+
 hr {
   border-bottom: $shila-base-border;
   border-left: 0;
@@ -36,6 +42,7 @@ hr {
   border-top: 0;
   margin: $shila-base-spacing 0;
 }
+
 blockquote {
   color: $shila-medium-gray;
   margin-left: 0;

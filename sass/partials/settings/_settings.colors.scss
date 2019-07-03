@@ -138,6 +138,14 @@ $shila-base-text-color: $shila-darkest-gray !default;
 $shila-heading-color: $shila-black !default;
 
 
+// $shila-button-text-color
+//
+// Button text color. Default value: <code>$shila-white</code>.
+//
+// Style guide: settings.colors.text.shila-button-text-color
+$shila-button-text-color: $shila-white !default;
+
+
 // Background
 //
 // Weight: 4
@@ -174,7 +182,7 @@ $shila-content-background-color: $shila-background-color !default;
 // Form element background color. Default value:
 // <code>$shila-background-color</code>.
 //
-// Style guide: settings.colors.background.shila-content-background-color
+// Style guide: settings.colors.background.shila-form-element-background-color
 $shila-form-element-background-color: $shila-content-background-color !default;
 
 
@@ -237,8 +245,17 @@ $shila-action-color: $shila-blue !default;
 
 // $shila-base-border-color
 //
-// A color that can be used for different kinds of borders. Defaults
-// to <code>$shila-lightest-gray</code>.
+// A color that can be used for different kinds of borders. Default value:
+// <code>$shila-lightest-gray</code>.
 //
 // Style guide: settings.colors.other.shila-base-border-color
 $shila-base-border-color: $shila-lightest-gray !default;
+
+
+// $shila-focus-outline-color
+//
+// Focus outline color. Default value: transparentized
+// <code>$shila-action-color</code>.
+//
+// Style guide: settings.colors.other.shila-focus-outline-color
+$shila-focus-outline-color: transparentize($shila-action-color, 0.4);

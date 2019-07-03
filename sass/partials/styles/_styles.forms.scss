@@ -15,20 +15,30 @@ fieldset {
   margin: 0;
   padding: 0;
 }
+
 legend {
-  font-weight: 600;
+  font-weight: $shila-font-weight-bold;
   margin-bottom: $shila-small-spacing / 2;
   padding: 0;
 }
+
+label {
+  display: block;
+  font-weight: $shila-font-weight-bold;
+  margin-bottom: $shila-small-spacing / 2;
+}
+
 input,
-label,
-select {
+select,
+textarea {
   display: block;
   font-family: $shila-base-font-family;
   font-size: 1rem;
 }
+
 #{$shila-all-text-inputs},
 select[multiple=multiple] {
+  appearance: none;
   background-color: $shila-form-element-background-color;
   border: $shila-base-border;
   border-radius: $shila-base-border-radius;
@@ -40,19 +50,57 @@ select[multiple=multiple] {
   padding: $shila-base-spacing / 3;
   transition: border-color $shila-base-duration $shila-base-timing;
   width: 100%;
+
   &:hover {
     border-color: shila-shade($shila-base-border-color, 20%);
   }
+
   &:focus {
     border-color: $shila-action-color;
     box-shadow: $shila-form-box-shadow-focus;
     outline: none;
   }
+
   &:disabled {
     background-color: shila-shade($shila-form-element-background-color, 5%);
     cursor: not-allowed;
+
     &:hover {
       border: $shila-base-border;
     }
+  }
+
+  &::placeholder {
+    color: shila-tint($shila-base-text-color, 40%);
+  }
+}
+
+textarea {
+  resize: vertical;
+}
+
+[type="checkbox"],
+[type="radio"] {
+  display: inline;
+  margin-right: $shila-small-spacing / 2;
+}
+
+[type="file"] {
+  margin-bottom: $shila-small-spacing;
+  width: 100%;
+}
+
+select {
+  margin-bottom: $shila-small-spacing;
+  width: 100%;
+}
+
+[type="checkbox"],
+[type="radio"],
+[type="file"],
+select {
+  &:focus {
+    outline: $shila-focus-outline;
+    outline-offset: $shila-focus-outline-offset;
   }
 }

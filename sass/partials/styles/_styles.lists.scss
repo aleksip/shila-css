@@ -11,12 +11,12 @@
 
 ul,
 ol {
-  margin: 0 0 1rem;
+  margin: 0 0 $shila-base-spacing;
 }
 dl {
-  margin-bottom: $shila-small-spacing;
+  margin-bottom: $shila-base-spacing;
   dt {
-    font-weight: 600;
+    font-weight: $shila-font-weight-bold;
     margin-top: $shila-small-spacing;
   }
   dd {

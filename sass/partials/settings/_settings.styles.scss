@@ -49,10 +49,40 @@ $shila-form-box-shadow: inset 0 1px 3px rgba(#000, 0.06) !default;
 // $shila-form-box-shadow-focus
 //
 // Default value: <code>$shila-form-box-shadow, 0 0 5px
-// adjust-color($shila-action-color, $lightness: -5%, $alpha: -0.3)</code>.
+// rgba($shila-action-color, 0.7)</code>.
 //
 // Style guide: settings.styles.forms.shila-form-box-shadow-focus
-$shila-form-box-shadow-focus: $shila-form-box-shadow, 0 0 5px adjust-color($shila-action-color, $lightness: -5%, $alpha: -0.3) !default;
+$shila-form-box-shadow-focus: $shila-form-box-shadow, 0 0 5px rgba($shila-action-color, 0.7) !default;
+
+
+// Focus
+//
+// Style guide: settings.styles.focus
+
+
+// $shila-focus-outline-width
+//
+// Default value: <code>3px</code>.
+//
+// Style guide: settings.styles.focus.shila-focus-outline-width
+$shila-focus-outline-width: 3px;
+
+
+// $shila-focus-outline
+//
+// Default value: <code>$shila-focus-outline-width solid
+// $shila-focus-outline-color</code>.
+//
+// Style guide: settings.styles.focus.shila-focus-outline
+$shila-focus-outline: $shila-focus-outline-width solid $shila-focus-outline-color;
+
+
+// $shila-focus-outline-offset
+//
+// Default value: <code>2px</code>.
+//
+// Style guide: settings.styles.focus.shila-focus-outline-offset
+$shila-focus-outline-offset: 2px;
 
 
 // Animations

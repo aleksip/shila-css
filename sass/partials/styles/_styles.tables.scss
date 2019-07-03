@@ -11,22 +11,28 @@
 
 table {
   border-collapse: collapse;
-  margin: $shila-small-spacing 0;
-  table-layout: fixed;
+  margin: $shila-base-spacing 0;
+  text-align: left;
   width: 100%;
 }
-th {
-  border-bottom: 1px solid shila-shade($shila-base-border-color, 25%);
-  font-weight: 600;
-  padding: $shila-small-spacing 0;
-  text-align: left;
+
+thead {
+  vertical-align: bottom;
 }
-td {
+
+tbody {
+  vertical-align: top;
+}
+
+tr {
   border-bottom: $shila-base-border;
-  padding: $shila-small-spacing 0;
 }
-tr,
-td,
+
 th {
-  vertical-align: middle;
+  font-weight: $shila-font-weight-bold;
+}
+
+th,
+td {
+  padding: $shila-small-spacing $shila-small-spacing $shila-small-spacing 0;
 }

@@ -9,12 +9,15 @@
 // Style guide: styles.buttons
 
 
+$_button-background-color: $shila-action-color;
+$_button-background-color-hover: shila-shade($shila-action-color, 20%);
+
 #{$shila-all-buttons} {
   appearance: none;
-  background-color: $shila-action-color;
+  background-color: $_button-background-color;
   border: 0;
   border-radius: $shila-base-border-radius;
-  color: #fff;
+  color: $shila-button-text-color;
   cursor: pointer;
   display: inline-block;
   font-family: $shila-base-font-family;
@@ -23,21 +26,28 @@
   font-weight: $shila-font-weight-bold;
   line-height: 1;
   padding: $shila-small-spacing $shila-base-spacing;
+  text-align: center;
   text-decoration: none;
   transition: background-color $shila-base-duration $shila-base-timing;
   user-select: none;
   vertical-align: middle;
   white-space: nowrap;
-  &:hover,
-  &:focus {
-    background-color: shila-shade($shila-action-color, 20%);
-    color: #fff;
+
+  &:hover {
+    background-color: $_button-background-color-hover;
   }
+
+  &:focus {
+    outline: $shila-focus-outline;
+    outline-offset: $shila-focus-outline-offset;
+  }
+
   &:disabled {
     cursor: not-allowed;
     opacity: 0.5;
+
     &:hover {
-      background-color: $shila-action-color;
+      background-color: $_button-background-color;
     }
   }
 }
