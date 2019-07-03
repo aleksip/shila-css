@@ -2,7 +2,7 @@
 
 Sass-based CSS framework.
 
-This documentation is for shila-css 1.0.0-beta.2.
+This documentation is for shila-css 1.0.0.
 
 
 ### Settings
@@ -29,4 +29,5 @@ Useful default rules for unclassed HTML elements.
 ### Styles
 
 The opinionated part of the framework. Some light styling to make unclassed HTML
-elements look and feel a bit nicer.
+elements look and feel a bit nicer. Heavily based on 
+[Bitters](https://bitters.bourbon.io/).
