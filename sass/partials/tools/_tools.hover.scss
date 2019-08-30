@@ -1,0 +1,46 @@
+// @file
+// sass/partials/tools/_tools.hover.scss
+
+
+// tools.hover
+//
+// Style guide: tools.hover
+
+
+// shila-hover-color
+//
+// <code>@mixin shila-hover-color($color: $shila-action-color, $hover-color: shila-shade($color, 25%))</code>
+//
+// Transitions the color of the element on hover.
+//
+// $color       - (Optional.) The default color for the element.
+// $hover-color - (Optional.) The color for the element when hovered on.
+//
+// Style guide: tools.links.shila-hover-color
+@mixin shila-hover-color($color: $shila-action-color, $hover-color: shila-shade($color, 25%)) {
+  color: $color;
+  transition: color $shila-base-duration $shila-base-timing;
+  &:hover {
+    color: $hover-color;
+  }
+}
+
+
+// shila-hover-underline
+//
+// <code>@mixin shila-hover-underline</code>
+//
+// Underline the element when hovered on.
+//
+// $color - (Optional.) Underline color.
+//
+// Style guide: tools.links.shila-hover-shade
+@mixin shila-hover-underline($color: null) {
+  text-decoration: none;
+  &:hover {
+    text-decoration: underline;
+    @if $color {
+      text-decoration-color: $color;
+    }
+  }
+}
