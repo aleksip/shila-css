@@ -258,4 +258,4 @@ $shila-base-border-color: $shila-lightest-gray !default;
 // <code>$shila-action-color</code>.
 //
 // Style guide: settings.colors.other.shila-focus-outline-color
-$shila-focus-outline-color: transparentize($shila-action-color, 0.4);
+$shila-focus-outline-color: transparentize($shila-action-color, 0.4) !default;
