@@ -62,23 +62,19 @@
         <h3 class="kss-title kss-title--level-3">
           <a class="kss-title__permalink" href="#kssref-tools-ratio-shila-intrinsic-ratio">
             <span class="kss-title__ref">
-              2.7.1
+              2.9.1
               <span class="kss-title__permalink-hash">
                   #tools.ratio.shila-intrinsic-ratio
               </span>
             </span>
-            shila-intrinsic-ratio
+            shila-minimum-ratio
           </a>
         </h3>
 
 
           <div class="kss-description">
-            <p><code>@mixin shila-intrinsic-ratio($ratio, $fit: null, $selector: &quot;&gt; :first-child&quot;)</code></p>
-<p>Sets a fixed ratio for a child element. Supports different ways to fit the
-content. The default is to scale both width and height so all content is
-visible, but might be distorted. The optional <code>$fit</code> parameter can
-be used to scale the content in only one dimension, possible overflow is
-hidden.</p>
+            <p><code>@mixin shila-minimum-ratio($ratio, $selector: &quot;&gt; :first-child&quot;)</code></p>
+<p>Sets a minimum ratio for a child element.</p>
 
           </div>
 
@@ -92,12 +88,6 @@ hidden.</p>
               </div>
             </li>
             <li class="kss-parameters__item">
-              <div class="kss-parameters__name"><code>$fit</code></div>
-              <div class="kss-parameters__description">
-                (Optional.) String value of either <code>width</code> or <code>height</code>.
-              </div>
-            </li>
-            <li class="kss-parameters__item">
               <div class="kss-parameters__name"><code>$selector</code></div>
               <div class="kss-parameters__description">
                 (Optional.) Child element CSS selector.
@@ -108,7 +98,7 @@ hidden.</p>
 
 
         <div class="kss-source kss-style">
-          Source: <code>partials/tools/_tools.ratio.scss</code>, line 10
+          Source: <code>partials/tools/_tools.ratio.scss</code>, line 53
         </div>
 
     </div>
@@ -121,6 +111,31 @@ hidden.</p>
 <script src="kss-assets/kss-fullscreen.js"></script>
 <script src="kss-assets/kss-guides.js"></script>
 <script src="kss-assets/kss-markup.js"></script>
+<script>
+  var spy = new ScrollSpy('#kss-node', {
+    nav: '.kss-nav__menu-child > li > a',
+    className: 'is-in-viewport'
+  });
+  var kssFullScreen = new KssFullScreen({
+    idPrefix: 'kss-fullscreen-',
+    bodyClass: 'kss-fullscreen-mode',
+    elementClass: 'is-fullscreen'
+  });
+  var kssGuides = new KssGuides({
+    bodyClass: 'kss-guides-mode'
+  });
+  var kssMarkup = new KssMarkup({
+    bodyClass: 'kss-markup-mode',
+    detailsClass: 'kss-markup'
+  });
+</script>
+
+
+
+<!-- Automatically built using <a href="https://github.com/kss-node/kss-node">kss-node</a>. -->
+</body>
+</html>
+>
 <script>
   var spy = new ScrollSpy('#kss-node', {
     nav: '.kss-nav__menu-child > li > a',

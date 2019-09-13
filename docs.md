@@ -2,7 +2,7 @@
 
 Sass-based CSS framework.
 
-This documentation is for shila-css 1.0.0.
+This documentation is for shila-css 1.1.0.
 
 
 ### Settings
