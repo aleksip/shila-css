@@ -1,0 +1,22 @@
+// @file
+// sass/partials/styles/_styles.focus.scss
+
+
+// styles.focus
+//
+// Styling for focused elements.
+//
+// Style guide: styles.focus
+
+
+a,
+[type="checkbox"],
+[type="radio"],
+[type="file"],
+select,
+#{$shila-all-buttons} {
+  &:focus {
+    outline: $shila-focus-outline;
+    outline-offset: $shila-focus-outline-offset;
+  }
+}

@@ -37,11 +37,6 @@ $_button-background-color-hover: shila-shade($shila-action-color, 20%);
     background-color: $_button-background-color-hover;
   }
 
-  &:focus {
-    outline: $shila-focus-outline;
-    outline-offset: $shila-focus-outline-offset;
-  }
-
   &:disabled {
     cursor: not-allowed;
     opacity: 0.5;

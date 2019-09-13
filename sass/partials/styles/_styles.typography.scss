@@ -20,21 +20,6 @@ html {
   color: $shila-heading-color;
 }
 
-a {
-  color: $shila-action-color;
-  text-decoration-skip: ink;
-  transition: color $shila-base-duration $shila-base-timing;
-
-  &:hover {
-    color: shila-shade($shila-action-color, 25%);
-  }
-
-  &:focus {
-    outline: $shila-focus-outline;
-    outline-offset: $shila-focus-outline-offset;
-  }
-}
-
 hr {
   border-bottom: $shila-base-border;
   border-left: 0;

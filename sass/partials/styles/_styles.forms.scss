@@ -94,13 +94,3 @@ select {
   margin-bottom: $shila-small-spacing;
   width: 100%;
 }
-
-[type="checkbox"],
-[type="radio"],
-[type="file"],
-select {
-  &:focus {
-    outline: $shila-focus-outline;
-    outline-offset: $shila-focus-outline-offset;
-  }
-}

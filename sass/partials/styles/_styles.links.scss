@@ -1,0 +1,14 @@
+// @file
+// sass/partials/styles/_styles.links.scss
+
+
+// styles.links
+//
+// Styling for links.
+//
+// Style guide: styles.links
+
+
+a {
+  @include shila-hover-color;
+}
