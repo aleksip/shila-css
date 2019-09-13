@@ -22,7 +22,62 @@
 }
 
 
-// shila-responsive-side-margins
+// shila-side-paddings
+//
+// <code>@mixin shila-side-paddings($padding: $shila-base-spacing)</code>
+//
+// Sets left and right padding.
+//
+// $padding - (Optional.) Padding to set.
+//
+// Style guide: tools.layout.shila-side-paddings
+@mixin shila-side-paddings($padding: $shila-base-spacing) {
+  padding-left: $padding;
+  padding-right: $padding;
+}
+
+
+// shila-responsive-side-spacings
+//
+// <code>@mixin shila-responsive-side-spacings</code>
+//
+// Sets side margins and padding for different breakpoints using the provided or
+// default values.
+//
+// $margins - (Optional.) Sass map with margins keyed by breakpoints.
+// $paddings - (Optional.) Sass map with paddings keyed by breakpoints.
+//
+// Style guide: tools.layout.shila-responsive-side-spacings
+@mixin shila-responsive-side-spacings($margins: null, $paddings: null) {
+  @each $breakpoint in join("default", map-keys($shila-breakpoints)) {
+    @if $margins and map-has-key($margins, $breakpoint) {
+      @if $breakpoint == "default" {
+        @include shila-side-margins(map-get($margins, $breakpoint));
+      }
+      @else {
+        @include breakpoint(shila-breakpoint($breakpoint)) {
+          @include shila-side-margins(map-get($margins, $breakpoint));
+        }
+      }
+    }
+    @if $paddings and map-has-key($paddings, $breakpoint) {
+      @if $breakpoint == "default" {
+        @include shila-side-paddings(map-get($paddings, $breakpoint));
+      }
+      @else {
+        @include breakpoint(shila-breakpoint($breakpoint)) {
+          @include shila-side-paddings(map-get($paddings, $breakpoint));
+        }
+      }
+    }
+  }
+}
+
+
+// Deprecated: shila-responsive-side-margins
+//
+// Will be removed in the next major release. Use
+// <code>shila-responsive-side-spacings</code> instead.
 //
 // <code>@mixin shila-responsive-side-margins</code>
 //
@@ -33,18 +88,7 @@
 //
 // Style guide: tools.layout.shila-responsive-side-margins
 @mixin shila-responsive-side-margins($margins: $shila-side-spacings) {
-  @each $breakpoint in join("default", map-keys($shila-breakpoints)) {
-    @if map-has-key($margins, $breakpoint) {
-      @if $breakpoint == "default" {
-        @include shila-side-margins(map-get($margins, $breakpoint));
-      }
-      @else {
-        @include breakpoint(shila-breakpoint($breakpoint)) {
-          @include shila-side-margins(map-get($margins, $breakpoint));
-        }
-      }
-    }
-  }
+  @include shila-responsive-side-spacings($margins: $margins);
 }
 
 
